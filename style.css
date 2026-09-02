@@ -286,6 +286,10 @@ hr {
   font-size: 15px;
 }
 
+.home-split-text .btn {
+  align-self: flex-start;
+}
+
 .home-split-text .home-map {
   margin-top: 48px;
 }
