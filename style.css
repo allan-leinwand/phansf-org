@@ -1,77 +1,98 @@
-/* Reset and base */
+/* ============================================================
+   PHAN SF — Design System
+   Typefaces: Playfair Display (serif headings), Inter (sans UI)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Base */
 body {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
-  line-height: 1.7;
-  color: #333;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #2c2c2c;
   background: #fff;
+  -webkit-font-smoothing: antialiased;
 }
 
-a { color: #4a7c59; text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: #3d6b4a; text-decoration: none; }
+a:hover { color: #2a4d34; text-decoration: underline; }
 
 img { max-width: 100%; height: auto; display: block; }
 
-/* Header */
+/* ============================================================
+   HEADER & NAV
+   ============================================================ */
+
 .site-header {
-  border-bottom: 1px solid #e0e0e0;
   background: #fff;
+  border-bottom: 1px solid #e8e8e8;
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
 .header-inner {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 24px;
+  gap: 32px;
 }
 
 .site-logo {
-  padding: 12px 0;
+  padding: 14px 0;
   flex-shrink: 0;
 }
 
 .site-logo img {
-  height: 60px;
+  height: 68px;
   width: auto;
 }
 
-/* Nav */
-nav { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; }
-
-nav a {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #333;
-  padding: 8px 10px;
-  white-space: nowrap;
+nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
 }
 
-nav a:hover { color: #4a7c59; text-decoration: none; }
+nav a {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #3a3a3a;
+  padding: 10px 14px;
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: #3d6b4a; text-decoration: none; }
 
 .nav-dropdown { position: relative; }
 
 .nav-dropdown > span {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #333;
-  padding: 8px 10px;
+  color: #3a3a3a;
+  padding: 10px 14px;
   cursor: pointer;
   white-space: nowrap;
+  display: block;
+  transition: color 0.2s;
 }
+
+.nav-dropdown:hover > span { color: #3d6b4a; }
 
 .dropdown-menu {
   display: none;
@@ -79,9 +100,10 @@ nav a:hover { color: #4a7c59; text-decoration: none; }
   top: 100%;
   left: 0;
   background: #fff;
-  border: 1px solid #e0e0e0;
-  min-width: 200px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border: 1px solid #e8e8e8;
+  border-top: 2px solid #3d6b4a;
+  min-width: 220px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
   z-index: 200;
 }
 
@@ -89,76 +111,142 @@ nav a:hover { color: #4a7c59; text-decoration: none; }
 
 .dropdown-menu a {
   display: block;
-  padding: 10px 16px;
-  font-size: 13px;
-  color: #333;
+  padding: 12px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #3a3a3a;
+  border-bottom: 1px solid #f4f4f4;
+  transition: background 0.15s, color 0.15s;
 }
 
-.dropdown-menu a:hover { background: #f5f5f5; }
+.dropdown-menu a:last-child { border-bottom: none; }
+.dropdown-menu a:hover { background: #f8fbf9; color: #3d6b4a; text-decoration: none; }
 
 .nav-cta {
-  background: #4a7c59;
+  background: #3d6b4a;
   color: #fff !important;
-  padding: 8px 16px !important;
-  border-radius: 2px;
+  padding: 10px 22px !important;
+  border-radius: 1px;
+  letter-spacing: 0.12em;
+  transition: background 0.2s !important;
 }
 
-.nav-cta:hover { background: #3a6347; color: #fff !important; }
+.nav-cta:hover { background: #2a4d34 !important; color: #fff !important; text-decoration: none; }
 
-/* Page content */
-.page-content {
-  max-width: 860px;
-  margin: 0 auto;
-  padding: 60px 24px 80px;
+/* ============================================================
+   SECTION TITLE TREATMENT (centered, ruled)
+   ============================================================ */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
 }
 
+.section-title h2,
 .page-content h2 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 28px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 32px;
   font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 24px;
-  color: #222;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+  text-transform: none;
+  text-align: center;
+}
+
+.section-title::after,
+.page-content h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 1px;
+  background: #3d6b4a;
+  margin: 14px auto 0;
+}
+
+/* ============================================================
+   PAGE CONTENT (inner pages)
+   ============================================================ */
+
+.page-content {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 72px 32px 96px;
 }
 
 .page-content h3 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 16px;
-  color: #222;
+  font-weight: 600;
+  margin: 40px 0 14px;
+  color: #1a1a1a;
 }
 
 .page-content h4 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin: 32px 0 12px;
-  color: #222;
+  margin: 40px 0 14px;
+  color: #3d6b4a;
 }
 
-.page-content p { margin-bottom: 16px; }
+.page-content p { margin-bottom: 18px; color: #2c2c2c; }
 
 .page-content ul, .page-content ol {
-  margin: 0 0 16px 24px;
+  margin: 0 0 18px 24px;
+  color: #2c2c2c;
 }
+
+.page-content li { margin-bottom: 6px; }
 
 .page-content blockquote {
-  border-left: 4px solid #4a7c59;
-  margin: 24px 0;
-  padding: 16px 24px;
-  background: #f8faf9;
+  border-left: 3px solid #3d6b4a;
+  margin: 32px 0;
+  padding: 20px 28px;
+  background: #f7faf8;
   font-style: italic;
   color: #444;
+  font-size: 15px;
+  line-height: 1.9;
 }
 
-hr { border: none; border-top: 1px solid #e0e0e0; margin: 40px 0; }
+hr {
+  border: none;
+  border-top: 1px solid #ebebeb;
+  margin: 56px 0;
+}
 
-/* Home split: text left, masonry right */
+/* ============================================================
+   BUTTON
+   ============================================================ */
+
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #3d6b4a;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 1px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.btn:hover { background: #2a4d34; text-decoration: none; color: #fff; }
+
+/* ============================================================
+   HOME SPLIT LAYOUT
+   ============================================================ */
+
 .home-split {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -166,37 +254,52 @@ hr { border: none; border-top: 1px solid #e0e0e0; margin: 40px 0; }
 }
 
 .home-split-text {
-  padding: 60px 48px 60px 40px;
+  padding: 80px 56px 80px 48px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
 .home-split-text h3 {
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 26px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 30px;
   font-weight: 700;
-  margin-bottom: 24px;
-  color: #222;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  line-height: 1.3;
 }
 
-.home-split-text p { margin-bottom: 16px; line-height: 1.75; }
+/* Decorative rule under home title */
+.home-split-text h3::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #3d6b4a;
+  margin: 16px 0 28px;
+}
+
+.home-split-text p {
+  margin-bottom: 18px;
+  line-height: 1.85;
+  color: #3a3a3a;
+  font-size: 15px;
+}
 
 .home-split-text .home-map {
-  margin-top: 40px;
-  padding: 0;
+  margin-top: 48px;
 }
 
 .home-split-text .home-map img {
   width: 100%;
-  border-radius: 4px;
+  border-radius: 2px;
 }
 
-/* Masonry photo column */
+/* Masonry photo grid */
 .home-split-masonry {
   display: flex;
-  gap: 3px;
-  background: #eee;
+  gap: 2px;
+  background: #d8d8d8;
   align-items: stretch;
 }
 
@@ -204,7 +307,7 @@ hr { border: none; border-top: 1px solid #e0e0e0; margin: 40px 0; }
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 
 .home-split-masonry .masonry-col img {
@@ -214,147 +317,201 @@ hr { border: none; border-top: 1px solid #e0e0e0; margin: 40px 0; }
   object-position: center;
   display: block;
   min-height: 0;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.3s ease;
 }
 
-.home-split-masonry .masonry-col img:hover { opacity: 0.88; }
+.home-split-masonry .masonry-col img:hover { opacity: 0.9; }
 
-@media (max-width: 900px) {
-  .home-split {
-    grid-template-columns: 1fr;
-  }
-  .home-split-masonry {
-    height: 60vw;
-    min-height: 300px;
-  }
-}
+/* ============================================================
+   BOARD PAGE
+   ============================================================ */
 
-.btn {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 12px 28px;
-  background: #4a7c59;
-  color: #fff;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  border-radius: 2px;
-}
-
-.btn:hover { background: #3a6347; text-decoration: none; color: #fff; }
-
-
-
-/* Board page */
 .board-columns {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 32px;
+  gap: 48px;
+  margin-top: 40px;
 }
 
 .officer-list { list-style: none; margin: 0; padding: 0; }
-.officer-list li { padding: 4px 0; border-bottom: 1px solid #f0f0f0; }
+
+.officer-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 15px;
+  color: #2c2c2c;
+}
 
 .officer-title {
-  font-weight: 700;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #3d6b4a;
+  letter-spacing: 0.04em;
 }
 
-/* Projects page */
+/* ============================================================
+   PROJECTS PAGE
+   ============================================================ */
+
 .project-item {
   display: grid;
-  grid-template-columns: 320px 1fr;
-  gap: 32px;
+  grid-template-columns: 340px 1fr;
+  gap: 40px;
   align-items: start;
-  margin-bottom: 48px;
+  margin-bottom: 56px;
 }
 
-.project-item img { border-radius: 4px; width: 100%; }
-
+.project-item img { border-radius: 2px; width: 100%; }
 .project-item h4 { margin-top: 0; }
 
-/* Newsletter page */
-.newsletter-year { margin-top: 32px; }
-.newsletter-year h4 { margin-bottom: 8px; }
-.newsletter-links { list-style: none; padding: 0; margin: 0 0 16px; display: flex; flex-wrap: wrap; gap: 8px; }
-.newsletter-links a {
-  padding: 6px 14px;
-  border: 1px solid #4a7c59;
-  color: #4a7c59;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 13px;
-  border-radius: 2px;
-}
-.newsletter-links a:hover { background: #4a7c59; color: #fff; text-decoration: none; }
+/* ============================================================
+   NEWSLETTER PAGE
+   ============================================================ */
 
-/* Contact page */
+.newsletter-year { margin-top: 40px; }
+.newsletter-year h4 { margin-bottom: 12px; }
+
+.newsletter-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.newsletter-links a {
+  padding: 8px 18px;
+  border: 1px solid #3d6b4a;
+  color: #3d6b4a;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  border-radius: 1px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.newsletter-links a:hover {
+  background: #3d6b4a;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ============================================================
+   CONTACT PAGE
+   ============================================================ */
+
 .contact-grid {
   display: grid;
-  grid-template-columns: 1fr 320px;
-  gap: 48px;
+  grid-template-columns: 1fr 340px;
+  gap: 56px;
   align-items: start;
 }
 
-/* Supervisor photo */
-.supervisor-photo { width: 200px; border-radius: 4px; margin-bottom: 16px; }
+.supervisor-photo { width: 200px; border-radius: 2px; margin-bottom: 20px; }
 
-/* Footer */
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 .site-footer {
-  background: #f5f5f5;
-  border-top: 1px solid #e0e0e0;
-  padding: 40px 24px;
+  background: #1c2b22;
+  padding: 56px 32px;
   text-align: center;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-size: 13px;
-  color: #666;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.55);
 }
 
-.site-footer a { color: #4a7c59; }
-.site-footer p { margin-bottom: 6px; }
+.site-footer a { color: rgba(255,255,255,0.75); }
+.site-footer a:hover { color: #fff; text-decoration: none; }
+.site-footer p { margin-bottom: 8px; }
 
-/* Membership form area */
+.footer-divider {
+  width: 32px;
+  height: 1px;
+  background: rgba(255,255,255,0.2);
+  margin: 20px auto;
+}
+
+/* ============================================================
+   MEMBERSHIP PAGE
+   ============================================================ */
+
 .membership-note {
-  background: #f8faf9;
-  border: 1px solid #d0e4d8;
-  padding: 24px;
-  border-radius: 4px;
+  background: #f7faf8;
+  border: 1px solid #c8ddd0;
+  border-left: 3px solid #3d6b4a;
+  padding: 24px 28px;
+  border-radius: 1px;
   margin: 32px 0;
+  font-size: 15px;
 }
 
 .paypal-section {
-  margin: 32px 0;
-  padding: 32px;
-  background: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
+  margin: 40px 0;
+  padding: 40px 32px;
+  background: #fafafa;
+  border: 1px solid #ebebeb;
+  border-radius: 1px;
   text-align: center;
 }
 
-.paypal-section p { margin-bottom: 16px; font-style: italic; color: #555; }
+.paypal-section p {
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #666;
+  font-size: 14px;
+}
 
 .paypal-btn {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 14px 36px;
   background: #0070ba;
   color: #fff;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  border-radius: 1px;
+  transition: background 0.2s;
 }
 
 .paypal-btn:hover { background: #005ea6; text-decoration: none; color: #fff; }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .hero-slideshow { height: 280px; }
-  .board-columns { grid-template-columns: 1fr; }
+/* ============================================================
+   EMERGENCY CALLOUT
+   ============================================================ */
+
+.emergency-callout {
+  background: #fff8f7;
+  border-left: 3px solid #b94040;
+  padding: 20px 28px;
+  margin-bottom: 40px;
+  border-radius: 1px;
+}
+
+.emergency-callout strong { font-size: 17px; color: #8b2020; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 960px) {
+  .home-split { grid-template-columns: 1fr; }
+  .home-split-masonry { height: 65vw; min-height: 320px; }
+  .home-split-text { padding: 56px 32px; }
   .project-item { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .board-columns { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
   nav { display: none; }
   .header-inner { flex-wrap: wrap; }
+  .page-content { padding: 48px 20px 64px; }
 }
