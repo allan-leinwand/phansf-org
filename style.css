@@ -162,27 +162,46 @@ hr { border: none; border-top: 1px solid #e0e0e0; margin: 40px 0; }
 .hero-slideshow {
   position: relative;
   width: 100%;
-  height: 60vh;
-  min-height: 380px;
-  max-height: 620px;
   overflow: hidden;
-  background: #111;
+  background: #fff;
 }
 
-/* Track holds all slides in a horizontal strip */
-.hero-slideshow .slide-track {
-  display: flex;
-  height: 100%;
+/* Each slide is absolutely positioned, full width, zero height by default */
+.hero-slideshow .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  opacity: 0;
+  transform: translateX(100%);
+  transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.65s ease;
+  pointer-events: none;
 }
 
-.hero-slideshow .slide-track img {
-  flex: 0 0 100%;
+/* Active slide: in place, visible, and drives the container height via relative flow */
+.hero-slideshow .slide.active {
+  position: relative;
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+}
+
+/* Slide leaving to the left */
+.hero-slideshow .slide.leaving {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+/* Slide entering from the right (reverse) */
+.hero-slideshow .slide.entering-left {
+  transform: translateX(-100%);
+}
+
+.hero-slideshow .slide img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  height: auto;
+  display: block;
 }
 
 /* Prev/next arrow buttons */
@@ -212,7 +231,7 @@ hr { border: none; border-top: 1px solid #e0e0e0; margin: 40px 0; }
 /* Dot indicators */
 .slider-dots {
   position: absolute;
-  bottom: 14px;
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
