@@ -287,7 +287,8 @@ hr {
 }
 
 .home-split-text .btn {
-  align-self: flex-start;
+  align-self: center;
+  margin-top: 24px;
 }
 
 .home-split-text .home-map {
@@ -505,17 +506,72 @@ hr {
    RESPONSIVE
    ============================================================ */
 
+/* Tablet: stack masonry above text, shrink nav spacing */
 @media (max-width: 960px) {
-  .home-split { grid-template-columns: 1fr; }
-  .home-split-masonry { height: 65vw; min-height: 320px; }
-  .home-split-text { padding: 56px 32px; }
+  .home-split {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    min-height: unset;
+  }
+
+  /* Masonry moves to top on tablet/mobile */
+  .home-split-masonry {
+    order: -1;
+    height: 55vw;
+    min-height: 280px;
+    max-height: 480px;
+  }
+
+  .home-split-text {
+    padding: 48px 32px 56px;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* Center the decorative rule under title */
+  .home-split-text h3::after {
+    margin: 16px auto 28px;
+  }
+
+  .home-split-text p { text-align: left; }
+
+  .home-split-text .btn { align-self: center; }
+
+  .home-split-text .home-map { width: 100%; }
+
   .project-item { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .board-columns { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 768px) {
+/* Mobile: hide nav, tighten everything */
+@media (max-width: 640px) {
   nav { display: none; }
-  .header-inner { flex-wrap: wrap; }
-  .page-content { padding: 48px 20px 64px; }
+  .header-inner { padding: 0 16px; }
+
+  .site-logo img { height: 52px; }
+
+  .home-split-masonry {
+    height: 72vw;
+    min-height: 240px;
+  }
+
+  /* 2 columns of masonry instead of 3 on small screens */
+  .home-split-masonry .masonry-col:last-child { display: none; }
+
+  .home-split-text {
+    padding: 36px 20px 48px;
+  }
+
+  .home-split-text h3 { font-size: 24px; }
+
+  .page-content { padding: 40px 20px 56px; }
+  .page-content h2 { font-size: 24px; }
+
+  .project-item { grid-template-columns: 1fr; }
+  .board-columns { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .newsletter-links { flex-direction: column; }
+  .newsletter-links a { text-align: center; }
 }
