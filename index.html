@@ -41,25 +41,25 @@
 
 <main>
   <div class="hero-slideshow" id="slideshow">
-    <img src="images/mansion.png" alt="Presidio Heights mansion" class="active">
-    <img src="images/trees.jpg" alt="Presidio trees">
-    <img src="images/sidewalk.jpg" alt="Presidio sidewalk">
-    <img src="images/temple.jpg" alt="Presidio Heights temple">
-    <img src="images/sacramento-street.jpg" alt="Sacramento Street">
-    <img src="images/corner.jpg" alt="Presidio Heights corner">
-    <img src="images/chrissy-field.jpg" alt="Chrissy Field">
-    <img src="images/lyon-steps.jpg" alt="Lyon Street Steps">
-    <img src="images/golden-gate.jpg" alt="Golden Gate view">
-    <img src="images/fairway.jpg" alt="Presidio Fairway">
-    <img src="images/houses.jpg" alt="Presidio Houses">
-    <img src="images/views.jpg" alt="Presidio Heights views">
-    <img src="images/alta-plaza.png" alt="Alta Plaza park">
-    <img src="images/overhead.jpg" alt="Presidio Heights overhead view">
-    <img src="images/istock-map.jpg" alt="Presidio Heights">
-    <img src="images/golf.jpg" alt="Presidio Golf">
-    <img src="images/wall.jpg" alt="Presidio Wall">
-    <img src="images/homes.jpg" alt="Presidio homes">
-    <img src="images/hill.jpg" alt="Presidio Hill">
+    <div class="slide-track" id="slide-track">
+      <img src="images/mansion.png" alt="Presidio Heights mansion">
+      <img src="images/temple.jpg" alt="Presidio Heights temple">
+      <img src="images/corner.jpg" alt="Presidio Heights corner">
+      <img src="images/chrissy-field.jpg" alt="Chrissy Field">
+      <img src="images/lyon-steps.jpg" alt="Lyon Street Steps">
+      <img src="images/fairway.jpg" alt="Presidio Fairway">
+      <img src="images/houses.jpg" alt="Presidio Houses">
+      <img src="images/views.jpg" alt="Presidio Heights views">
+      <img src="images/alta-plaza.png" alt="Alta Plaza park">
+      <img src="images/overhead.jpg" alt="Presidio Heights overhead view">
+      <img src="images/istock-map.jpg" alt="Presidio Heights map">
+      <img src="images/golf.jpg" alt="Presidio Golf">
+      <img src="images/wall.jpg" alt="Presidio Wall">
+      <img src="images/homes.jpg" alt="Presidio homes">
+    </div>
+    <button class="slider-btn prev" id="slider-prev" aria-label="Previous">&#8592;</button>
+    <button class="slider-btn next" id="slider-next" aria-label="Next">&#8594;</button>
+    <div class="slider-dots" id="slider-dots"></div>
   </div>
 
   <div class="home-intro">
@@ -105,14 +105,46 @@
 </footer>
 
 <script>
-  // Slideshow rotation
-  const slides = document.querySelectorAll('#slideshow img');
+  const track = document.getElementById('slide-track');
+  const slides = track.querySelectorAll('img');
+  const dotsContainer = document.getElementById('slider-dots');
+  const total = slides.length;
   let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 4000);
+  let timer;
+
+  // Build dot indicators
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
+    });
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(next, 5000);
+  }
+
+  document.getElementById('slider-next').addEventListener('click', () => { next(); startTimer(); });
+  document.getElementById('slider-prev').addEventListener('click', () => { prev(); startTimer(); });
+
+  // Pause on hover
+  track.parentElement.addEventListener('mouseenter', () => clearInterval(timer));
+  track.parentElement.addEventListener('mouseleave', startTimer);
+
+  startTimer();
 </script>
 
 </body>
