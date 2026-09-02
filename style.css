@@ -158,90 +158,36 @@ nav a:hover { color: #4a7c59; text-decoration: none; }
 
 hr { border: none; border-top: 1px solid #e0e0e0; margin: 40px 0; }
 
-/* Slideshow / hero */
-.hero-slideshow {
-  position: relative;
+/* Masonry hero */
+.hero-masonry {
   width: 100%;
-  height: 50vh;
-  min-height: 260px;
-  max-height: 480px;
+  height: 28vh;
+  min-height: 200px;
+  max-height: 320px;
   overflow: hidden;
+  display: flex;
+  gap: 3px;
   background: #111;
 }
 
-/* Each slide fills the fixed-height container */
-.hero-slideshow .slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transform: translateX(100%);
-  transition: transform 0.65s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.65s ease;
-  pointer-events: none;
+.hero-masonry .masonry-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+  overflow: hidden;
 }
 
-.hero-slideshow .slide.active {
-  position: absolute;
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-}
-
-.hero-slideshow .slide img {
+.hero-masonry .masonry-col img {
   width: 100%;
-  height: 100%;
+  flex: 1;
   object-fit: cover;
-  object-position: center center;
+  object-position: center;
   display: block;
+  transition: opacity 0.3s ease;
 }
 
-/* Prev/next arrow buttons */
-.slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.35);
-  border: none;
-  color: #fff;
-  font-size: 22px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-}
-
-.slider-btn:hover { background: rgba(0,0,0,0.65); }
-.slider-btn.prev { left: 16px; }
-.slider-btn.next { right: 16px; }
-
-/* Dot indicators */
-.slider-dots {
-  position: absolute;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
-  z-index: 10;
-}
-
-.slider-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.5);
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.slider-dot.active { background: #fff; }
+.hero-masonry .masonry-col img:hover { opacity: 0.85; }
 
 /* Home intro section */
 .home-intro {

@@ -40,29 +40,30 @@
 </header>
 
 <main>
-  <div class="hero-slideshow" id="slideshow">
-    <div class="slide active"><img src="images/mansion.png" alt="Presidio Heights mansion"></div>
-    <div class="slide"><img src="images/trees.jpg" alt="Presidio trees"></div>
-    <div class="slide"><img src="images/sidewalk.jpg" alt="Presidio sidewalk"></div>
-    <div class="slide"><img src="images/temple.jpg" alt="Presidio Heights temple"></div>
-    <div class="slide"><img src="images/sacramento-street.jpg" alt="Sacramento Street"></div>
-    <div class="slide"><img src="images/corner.jpg" alt="Presidio Heights corner"></div>
-    <div class="slide"><img src="images/chrissy-field.jpg" alt="Chrissy Field"></div>
-    <div class="slide"><img src="images/lyon-steps.jpg" alt="Lyon Street Steps"></div>
-    <div class="slide"><img src="images/golden-gate.jpg" alt="Golden Gate view"></div>
-    <div class="slide"><img src="images/fairway.jpg" alt="Presidio Fairway"></div>
-    <div class="slide"><img src="images/houses.jpg" alt="Presidio Houses"></div>
-    <div class="slide"><img src="images/views.jpg" alt="Presidio Heights views"></div>
-    <div class="slide"><img src="images/alta-plaza.png" alt="Alta Plaza park"></div>
-    <div class="slide"><img src="images/overhead.jpg" alt="Presidio Heights overhead view"></div>
-    <div class="slide"><img src="images/istock-map.jpg" alt="Presidio Heights map"></div>
-    <div class="slide"><img src="images/golf.jpg" alt="Presidio Golf"></div>
-    <div class="slide"><img src="images/wall.jpg" alt="Presidio Wall"></div>
-    <div class="slide"><img src="images/homes.jpg" alt="Presidio homes"></div>
-    <div class="slide"><img src="images/hill.jpg" alt="Presidio Hill"></div>
-    <button class="slider-btn prev" id="slider-prev" aria-label="Previous">&#8592;</button>
-    <button class="slider-btn next" id="slider-next" aria-label="Next">&#8594;</button>
-    <div class="slider-dots" id="slider-dots"></div>
+  <div class="hero-masonry">
+    <div class="masonry-col">
+      <img src="images/mansion.png" alt="Presidio Heights mansion">
+      <img src="images/chrissy-field.jpg" alt="Chrissy Field">
+      <img src="images/golf.jpg" alt="Presidio Golf">
+    </div>
+    <div class="masonry-col">
+      <img src="images/temple.jpg" alt="Presidio Heights temple">
+      <img src="images/fairway.jpg" alt="Presidio Fairway">
+    </div>
+    <div class="masonry-col">
+      <img src="images/lyon-steps.jpg" alt="Lyon Street Steps">
+      <img src="images/homes.jpg" alt="Presidio homes">
+      <img src="images/overhead.jpg" alt="Presidio Heights overhead view">
+    </div>
+    <div class="masonry-col">
+      <img src="images/corner.jpg" alt="Presidio Heights corner">
+      <img src="images/alta-plaza.png" alt="Alta Plaza park">
+    </div>
+    <div class="masonry-col">
+      <img src="images/views.jpg" alt="Presidio Heights views">
+      <img src="images/wall.jpg" alt="Presidio Wall">
+      <img src="images/houses.jpg" alt="Presidio Houses">
+    </div>
   </div>
 
   <div class="home-intro">
@@ -107,91 +108,7 @@
   <p style="margin-top:16px;">&copy; 2026 Presidio Heights Association of Neighbors (PHAN)</p>
 </footer>
 
-<script>
-  const slideshow = document.getElementById('slideshow');
-  const slides = Array.from(slideshow.querySelectorAll('.slide'));
-  const dotsContainer = document.getElementById('slider-dots');
-  const total = slides.length;
-  let current = 0;
-  let timer;
-  let animating = false;
 
-  // Build dot indicators
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'slider-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-    dot.addEventListener('click', () => { goTo(i, 1); startTimer(); });
-    dotsContainer.appendChild(dot);
-  });
-
-  function updateDots() {
-    dotsContainer.querySelectorAll('.slider-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
-  }
-
-  function goTo(index, direction) {
-    if (animating) return;
-    const next = (index + total) % total;
-    if (next === current) return;
-    animating = true;
-
-    const incoming = slides[next];
-    const outgoing = slides[current];
-
-    // Position incoming off-screen in the correct direction
-    incoming.classList.remove('leaving', 'entering-left');
-    incoming.style.transform = direction >= 0 ? 'translateX(100%)' : 'translateX(-100%)';
-    incoming.style.opacity = '0';
-    incoming.style.position = 'absolute';
-
-    // Force reflow so the initial position is painted before transition starts
-    incoming.getBoundingClientRect();
-
-    // Bring incoming into view
-    incoming.style.transition = 'transform 0.65s cubic-bezier(0.77,0,0.175,1), opacity 0.65s ease';
-    incoming.style.transform = 'translateX(0)';
-    incoming.style.opacity = '1';
-
-    // Push outgoing out
-    outgoing.style.transition = 'transform 0.65s cubic-bezier(0.77,0,0.175,1), opacity 0.65s ease';
-    outgoing.style.transform = direction >= 0 ? 'translateX(-100%)' : 'translateX(100%)';
-    outgoing.style.opacity = '0';
-
-    incoming.addEventListener('transitionend', function handler() {
-      incoming.removeEventListener('transitionend', handler);
-
-      // Promote incoming to active (relative, drives height)
-      incoming.removeAttribute('style');
-      incoming.classList.add('active');
-
-      // Reset outgoing
-      outgoing.removeAttribute('style');
-      outgoing.classList.remove('active');
-
-      current = next;
-      updateDots();
-      animating = false;
-    });
-  }
-
-  function nextSlide() { goTo(current + 1, 1); }
-  function prevSlide() { goTo(current - 1, -1); }
-
-  function startTimer() {
-    clearInterval(timer);
-    timer = setInterval(nextSlide, 5000);
-  }
-
-  document.getElementById('slider-next').addEventListener('click', () => { nextSlide(); startTimer(); });
-  document.getElementById('slider-prev').addEventListener('click', () => { prevSlide(); startTimer(); });
-
-  slideshow.addEventListener('mouseenter', () => clearInterval(timer));
-  slideshow.addEventListener('mouseleave', startTimer);
-
-  startTimer();
-</script>
 
 </body>
 </html>
