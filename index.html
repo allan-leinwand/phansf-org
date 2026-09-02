@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presidio Heights Association of Neighbors (PHAN)</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="images/PHANTREE.ico">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="site-logo" href="index.html">
+      <img src="images/PHAN_BANNER_TREE.jpg" alt="Presidio Heights Association of Neighbors (PHAN)">
+    </a>
+    <nav>
+      <a href="index.html">Home</a>
+      <div class="nav-dropdown">
+        <span>About &#9662;</span>
+        <div class="dropdown-menu">
+          <a href="board.html">Board of Directors</a>
+          <a href="membership.html">Membership &amp; Dues</a>
+          <a href="events.html">Events</a>
+          <a href="neighborhood-projects.html">Neighborhood Projects</a>
+        </div>
+      </div>
+      <div class="nav-dropdown">
+        <span>Resources &#9662;</span>
+        <div class="dropdown-menu">
+          <a href="district.html">311 &amp; District Supervisor</a>
+          <a href="newsletter.html">PHAN Newsletter</a>
+          <a href="police-emergencies.html">Police &amp; Emergencies</a>
+        </div>
+      </div>
+      <a href="contact.html">Contact</a>
+      <a href="membership.html" class="nav-cta">Pay Dues</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero-slideshow" id="slideshow">
+    <img src="images/mansion.png" alt="Presidio Heights mansion" class="active">
+    <img src="images/trees.jpg" alt="Presidio trees">
+    <img src="images/sidewalk.jpg" alt="Presidio sidewalk">
+    <img src="images/temple.jpg" alt="Presidio Heights temple">
+    <img src="images/sacramento-street.jpg" alt="Sacramento Street">
+    <img src="images/corner.jpg" alt="Presidio Heights corner">
+    <img src="images/chrissy-field.jpg" alt="Chrissy Field">
+    <img src="images/lyon-steps.jpg" alt="Lyon Street Steps">
+    <img src="images/golden-gate.jpg" alt="Golden Gate view">
+    <img src="images/fairway.jpg" alt="Presidio Fairway">
+    <img src="images/houses.jpg" alt="Presidio Houses">
+    <img src="images/views.jpg" alt="Presidio Heights views">
+    <img src="images/alta-plaza.png" alt="Alta Plaza park">
+    <img src="images/overhead.jpg" alt="Presidio Heights overhead view">
+    <img src="images/istock-map.jpg" alt="Presidio Heights">
+    <img src="images/golf.jpg" alt="Presidio Golf">
+    <img src="images/wall.jpg" alt="Presidio Wall">
+    <img src="images/homes.jpg" alt="Presidio homes">
+    <img src="images/hill.jpg" alt="Presidio Hill">
+  </div>
+
+  <div class="home-intro">
+    <h3>Welcome to Presidio Heights</h3>
+    <p>
+      Nestled just south of the world-famous <a href="https://presidio.gov/" target="_blank">Presidio National Park</a>
+      and the spectacular <a href="https://www.presidiogolf.com/" target="_blank">Presidio Golf Course</a>, Presidio Heights
+      is a serene and picturesque neighborhood that offers a peaceful retreat while keeping you just moments away from
+      San Francisco's most scenic parks and hiking trails. This charming community strikes the perfect balance between
+      tranquility and convenience, providing a quiet escape from the city's hustle without feeling removed from its energy.
+    </p>
+    <p>
+      Home to over 800 residences, <a href="https://www.google.com/maps/place/Presidio+Heights,+San+Francisco,+CA/@37.7893381,-122.4572257,2272m/" target="_blank">Presidio Heights</a>
+      features an elegant mix of single-family homes, apartment buildings, and condominiums, all contributing to its timeless
+      and classic character. Since the 1960s, the <strong>Presidio Heights Association of Neighbors (PHAN)</strong> has
+      played a vital role in preserving the neighborhood's charm and fostering a strong sense of community. Open to all
+      residents and local businesses, PHAN continues to uphold the welcoming spirit that makes this neighborhood so special.
+    </p>
+    <p>
+      Guided by a dedicated board of directors, PHAN actively engages in neighborhood matters, from transportation and
+      quality of life initiatives to new <a href="neighborhood-projects.html">real estate developments</a>. The association
+      hosts an <strong>annual all-neighbor board meeting</strong>, inviting everyone in Presidio Heights to come together,
+      stay informed, and contribute to the community's future.
+    </p>
+    <p>All neighbors in Presidio Heights are encouraged to <a href="membership.html">JOIN PHAN</a> and be a vital part of your community!</p>
+    <p>If you would like more information about PHAN, please reach out to us at <a href="mailto:info@phansf.org">info@phansf.org</a>.</p>
+    <a href="membership.html" class="btn">Join PHAN</a>
+  </div>
+
+  <div class="home-map">
+    <img src="images/map.jpg" alt="Map of San Francisco's Presidio area highlighting Fort Point, Crissy Field, Walt Disney Family Museum, and Palace of Fine Arts">
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p><a href="mailto:info@phansf.org">info@phansf.org</a></p>
+  <p>P.O. Box 29503, San Francisco, CA 94129</p>
+  <p>
+    <a href="https://www.x.com/phansf" target="_blank">Twitter: @PHANSF</a> &nbsp;|&nbsp;
+    <a href="https://www.instagram.com/phan_sf" target="_blank">Instagram: @PHAN_SF</a>
+  </p>
+  <p style="margin-top:16px;">&copy; 2026 Presidio Heights Association of Neighbors (PHAN)</p>
+</footer>
+
+<script>
+  // Slideshow rotation
+  const slides = document.querySelectorAll('#slideshow img');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 4000);
+</script>
+
+</body>
+</html>
