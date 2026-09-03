@@ -1079,50 +1079,6 @@ hr { border-top-color: var(--phan-line); margin: 32px 0; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
 
-/* Let editorial copy flow around larger image compositions */
-.story-row-interleaved {
-  display: flow-root;
-  max-width: 1280px;
-  overflow: visible;
-}
-
-.story-row-interleaved .story-copy {
-  max-width: none;
-}
-
-.story-row-interleaved .story-mosaic-five {
-  width: 48%;
-  float: right;
-  margin: 0 0 24px 40px;
-  shape-outside: polygon(0 0, 100% 0, 100% 54%, 82% 65%, 62% 76%, 40% 88%, 26% 100%, 0 100%);
-  shape-margin: 20px;
-  clip-path: polygon(0 0, 100% 0, 100% 54%, 82% 65%, 62% 76%, 40% 88%, 26% 100%, 0 100%);
-}
-
-.story-row-interleaved.story-row-reverse .story-mosaic-five {
-  float: left;
-  margin: 0 40px 24px 0;
-  shape-outside: polygon(0 0, 100% 0, 100% 100%, 74% 100%, 60% 88%, 38% 76%, 18% 65%, 0 54%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 74% 100%, 60% 88%, 38% 76%, 18% 65%, 0 54%);
-}
-
-.story-row-interleaved .story-copy p {
-  max-width: 760px;
-}
-
-@media (max-width: 900px) {
-  .story-row-interleaved .story-mosaic-five,
-  .story-row-interleaved.story-row-reverse .story-mosaic-five {
-    width: 100%;
-    float: none;
-    margin: 0 0 28px;
-    shape-outside: none;
-    clip-path: none;
-  }
-
-  .story-row-interleaved .story-copy p { max-width: none; }
-}
-
 .home-intro-block {
   padding: 48px 32px 32px;
 }
