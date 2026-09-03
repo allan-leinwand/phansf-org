@@ -1069,6 +1069,43 @@ hr { border-top-color: var(--phan-line); margin: 32px 0; }
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
 
+/* Let editorial copy flow around larger image compositions */
+.story-row-interleaved {
+  display: block;
+  max-width: 1280px;
+  overflow: auto;
+}
+
+.story-row-interleaved .story-copy {
+  max-width: none;
+}
+
+.story-row-interleaved .story-mosaic-five {
+  width: 58%;
+  float: right;
+  margin: 0 0 24px 48px;
+}
+
+.story-row-interleaved.story-row-reverse .story-mosaic-five {
+  float: left;
+  margin: 0 48px 24px 0;
+}
+
+.story-row-interleaved .story-copy p {
+  max-width: 760px;
+}
+
+@media (max-width: 900px) {
+  .story-row-interleaved .story-mosaic-five,
+  .story-row-interleaved.story-row-reverse .story-mosaic-five {
+    width: 100%;
+    float: none;
+    margin: 0 0 28px;
+  }
+
+  .story-row-interleaved .story-copy p { max-width: none; }
+}
+
 .home-intro-block {
   padding: 48px 32px 32px;
 }
