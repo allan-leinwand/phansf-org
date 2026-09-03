@@ -1094,11 +1094,16 @@ hr { border-top-color: var(--phan-line); margin: 32px 0; }
   width: 58%;
   float: right;
   margin: 0 0 24px 48px;
+  shape-outside: polygon(0 0, 100% 0, 100% 86%, 84% 100%, 0 100%);
+  shape-margin: 24px;
+  clip-path: polygon(0 0, 100% 0, 100% 86%, 84% 100%, 0 100%);
 }
 
 .story-row-interleaved.story-row-reverse .story-mosaic-five {
   float: left;
   margin: 0 48px 24px 0;
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 16% 100%, 0 86%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 16% 100%, 0 86%);
 }
 
 .story-row-interleaved .story-copy p {
@@ -1111,6 +1116,8 @@ hr { border-top-color: var(--phan-line); margin: 32px 0; }
     width: 100%;
     float: none;
     margin: 0 0 28px;
+    shape-outside: none;
+    clip-path: none;
   }
 
   .story-row-interleaved .story-copy p { max-width: none; }
