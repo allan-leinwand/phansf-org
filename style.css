@@ -1081,9 +1081,9 @@ hr { border-top-color: var(--phan-line); margin: 32px 0; }
 
 /* Let editorial copy flow around larger image compositions */
 .story-row-interleaved {
-  display: block;
+  display: flow-root;
   max-width: 1280px;
-  overflow: auto;
+  overflow: visible;
 }
 
 .story-row-interleaved .story-copy {
@@ -1091,19 +1091,19 @@ hr { border-top-color: var(--phan-line); margin: 32px 0; }
 }
 
 .story-row-interleaved .story-mosaic-five {
-  width: 58%;
+  width: 48%;
   float: right;
-  margin: 0 0 24px 48px;
-  shape-outside: polygon(0 0, 100% 0, 100% 86%, 84% 100%, 0 100%);
-  shape-margin: 24px;
-  clip-path: polygon(0 0, 100% 0, 100% 86%, 84% 100%, 0 100%);
+  margin: 0 0 24px 40px;
+  shape-outside: polygon(0 0, 100% 0, 100% 54%, 82% 65%, 62% 76%, 40% 88%, 26% 100%, 0 100%);
+  shape-margin: 20px;
+  clip-path: polygon(0 0, 100% 0, 100% 54%, 82% 65%, 62% 76%, 40% 88%, 26% 100%, 0 100%);
 }
 
 .story-row-interleaved.story-row-reverse .story-mosaic-five {
   float: left;
-  margin: 0 48px 24px 0;
-  shape-outside: polygon(0 0, 100% 0, 100% 100%, 16% 100%, 0 86%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 16% 100%, 0 86%);
+  margin: 0 40px 24px 0;
+  shape-outside: polygon(0 0, 100% 0, 100% 100%, 74% 100%, 60% 88%, 38% 76%, 18% 65%, 0 54%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 74% 100%, 60% 88%, 38% 76%, 18% 65%, 0 54%);
 }
 
 .story-row-interleaved .story-copy p {
