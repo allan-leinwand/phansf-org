@@ -699,6 +699,10 @@ hr {
   grid-row: span 2;
 }
 
+.story-mosaic-four img:first-child {
+  grid-row: auto;
+}
+
 .home-gallery {
   max-width: 1200px;
   margin: 0 auto 96px;
