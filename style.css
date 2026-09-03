@@ -899,6 +899,16 @@ nav a:hover,
 .page-content a,
 .home-editorial a { color: var(--phan-green); }
 
+.page-content a.btn,
+.home-editorial a.btn {
+  color: #fff;
+}
+
+.page-content a.btn:hover,
+.home-editorial a.btn:hover {
+  color: #fff;
+}
+
 .page-content blockquote {
   background: var(--phan-green-soft);
   border-left-color: var(--phan-green);
