@@ -2072,3 +2072,38 @@ body:has(.page-content) {
 @media (max-width: 640px) {
   .story-photo-pair:has(> figure:only-child) { width: 100%; }
 }
+
+/* Final shared button treatment */
+a.btn,
+button.btn,
+a.paypal-btn,
+.home-editorial a.btn,
+.page-content a.btn,
+.page-content a.paypal-btn,
+.editorial-story .btn {
+  border: 1px solid #24472f;
+  background: #24472f;
+  color: #fff;
+  box-shadow: none;
+}
+
+a.btn:hover,
+button.btn:hover,
+a.paypal-btn:hover,
+.home-editorial a.btn:hover,
+.page-content a.btn:hover,
+.page-content a.paypal-btn:hover,
+.editorial-story .btn:hover {
+  border-color: #173522;
+  background: #173522;
+  color: #fff;
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+a.btn:focus-visible,
+button.btn:focus-visible,
+a.paypal-btn:focus-visible {
+  outline: 3px solid rgba(140, 111, 55, 0.42);
+  outline-offset: 3px;
+}
