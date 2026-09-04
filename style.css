@@ -2123,3 +2123,41 @@ a.paypal-btn:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+.editorial-story:nth-child(2) .story-photo-pair {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.editorial-story:nth-child(2) .story-photo-pair img {
+  height: clamp(170px, 18vw, 245px);
+}
+
+@media (max-width: 640px) {
+  .editorial-story:nth-child(2) .story-photo-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-location .location-photos {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.home-location .location-photos img {
+  height: clamp(190px, 19vw, 275px);
+}
+
+@media (max-width: 800px) {
+  .home-location .location-photos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .home-location .location-photos {
+    grid-template-columns: 1fr;
+  }
+}
