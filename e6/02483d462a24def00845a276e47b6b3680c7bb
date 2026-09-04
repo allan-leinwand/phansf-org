@@ -1,0 +1,19 @@
+index.html
+  s_96a2affb0d39a8::t_35e7ff4e43520a 166
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "e602483d462a24def00845a276e47b6b3680c7bb",
+  "prompts": {},
+  "sessions": {
+    "s_96a2affb0d39a8": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a06e99-033a-73e2-9198-5bbc8e3628f8",
+        "model": "gpt-5.6"
+      },
+      "human_author": "Allan Leinwand <allan@leinwand.org>"
+    }
+  }
+}
