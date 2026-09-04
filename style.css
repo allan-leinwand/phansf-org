@@ -2107,3 +2107,19 @@ a.paypal-btn:focus-visible {
   outline: 3px solid rgba(140, 111, 55, 0.42);
   outline-offset: 3px;
 }
+
+.editorial-story:first-child .story-photo-pair {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  margin-left: 0;
+}
+
+.editorial-story:first-child .story-photo-pair img {
+  height: clamp(170px, 18vw, 245px);
+}
+
+@media (max-width: 640px) {
+  .editorial-story:first-child .story-photo-pair {
+    grid-template-columns: 1fr;
+  }
+}
