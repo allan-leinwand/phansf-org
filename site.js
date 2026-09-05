@@ -12,9 +12,30 @@ if (nav) {
   toggle.textContent = '\u2630';
 
   mobileNav.className = 'mobile-nav';
-  nav.querySelectorAll('a').forEach((link) => {
-    const clone = link.cloneNode(true);
-    mobileNav.appendChild(clone);
+
+  // Build a real mobile menu instead of cloning only top-level links.
+  // This preserves every destination from the desktop dropdowns.
+  nav.querySelectorAll(':scope > a, :scope > .nav-dropdown').forEach((item) => {
+    if (item.matches('a')) {
+      const link = item.cloneNode(true);
+      if (link.classList.contains('nav-cta')) link.classList.add('mobile-nav-cta');
+      mobileNav.appendChild(link);
+      return;
+    }
+
+    const label = item.querySelector(':scope > span');
+    if (label) {
+      const heading = document.createElement('div');
+      heading.className = 'mobile-nav-group';
+      heading.textContent = label.textContent.replace(/\s+▾$/, '').trim();
+      mobileNav.appendChild(heading);
+    }
+
+    item.querySelectorAll(':scope > .dropdown-menu > a').forEach((link) => {
+      const clone = link.cloneNode(true);
+      clone.classList.add('mobile-subitem');
+      mobileNav.appendChild(clone);
+    });
   });
 
   toggle.addEventListener('click', () => {
@@ -24,7 +45,8 @@ if (nav) {
     toggle.textContent = open ? '\u00d7' : '\u2630';
   });
 
-  mobileNav.addEventListener('click', () => {
+  mobileNav.addEventListener('click', (event) => {
+    if (!event.target.closest('a')) return;
     mobileNav.classList.remove('is-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation');
