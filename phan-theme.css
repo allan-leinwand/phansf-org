@@ -1,0 +1,147 @@
+/* ============================================================
+   PHAN SF — Shared color system
+   One restrained evergreen palette used across every page.
+   ============================================================ */
+:root {
+  --phan-green: #3f6650;
+  --phan-green-dark: #294836;
+  --phan-green-deep: #20372b;
+  --phan-green-soft: #eef3ef;
+  --phan-green-muted: #6f8176;
+  --phan-green-border: #d7e0da;
+  --phan-green-rule: #dfe6e1;
+  --phan-green-hover: #355844;
+}
+
+/* Links, navigation and primary actions */
+a,
+.phan-card-link,
+.phan-section-link,
+.phan-eyebrow,
+.page-content h4,
+.story-kicker,
+.officer-title {
+  color: var(--phan-green);
+}
+
+a:hover,
+nav a:hover,
+.nav-dropdown:hover > span,
+.dropdown-menu a:hover {
+  color: var(--phan-green-dark);
+}
+
+.nav-cta,
+.nav-cta:hover,
+.btn,
+.btn:hover,
+.mobile-nav .mobile-nav-cta {
+  background: var(--phan-green);
+}
+
+.nav-cta:hover,
+.btn:hover {
+  background: var(--phan-green-dark);
+}
+
+.btn-light,
+.btn-light:hover {
+  background: #fff;
+  color: var(--phan-green-dark);
+}
+
+.dropdown-menu {
+  border-top-color: var(--phan-green);
+}
+
+.dropdown-menu a:hover {
+  background: var(--phan-green-soft);
+}
+
+/* Shared editorial greens */
+.phan-section-heading h2,
+.phan-mission h2,
+.phan-neighborhood h2,
+.phan-join h2,
+.phan-location h2,
+.phan-guide-heading h2,
+.phan-character-copy h2,
+.phan-history-copy h2,
+.phan-card h3,
+.section-title h2,
+.page-content h2,
+.page-content h3 {
+  color: var(--phan-green-deep);
+}
+
+.section-title::after,
+.page-content h2::after {
+  background: var(--phan-green);
+}
+
+/* Soft backgrounds and rules */
+.phan-mission,
+.phan-guide {
+  background: var(--phan-green-soft);
+}
+
+.phan-pillars,
+.phan-history-facts,
+.phan-cards {
+  border-color: var(--phan-green-rule);
+}
+
+.phan-pillars div,
+.phan-history-facts div {
+  border-color: var(--phan-green-rule);
+}
+
+.phan-history-facts strong {
+  color: var(--phan-green);
+}
+
+.phan-join {
+  background: var(--phan-green-deep);
+}
+
+.phan-join .phan-eyebrow {
+  color: #b7c8bd;
+}
+
+.membership-note {
+  background: var(--phan-green-soft);
+  border-color: var(--phan-green-border);
+  border-left-color: var(--phan-green);
+}
+
+.page-content blockquote {
+  border-left-color: var(--phan-green);
+  background: #f5f8f6;
+}
+
+.newsletter-links a {
+  border-color: var(--phan-green);
+  color: var(--phan-green);
+}
+
+.newsletter-links a:hover {
+  background: var(--phan-green);
+  color: #fff;
+}
+
+/* Unified homepage card treatment */
+.phan-card {
+  border-color: var(--phan-green-border);
+}
+
+.phan-card:hover {
+  border-color: #c5d2c9;
+}
+
+.phan-card h3 {
+  border-bottom-color: var(--phan-green-rule);
+}
+
+.mobile-nav-toggle {
+  color: var(--phan-green-dark);
+}
