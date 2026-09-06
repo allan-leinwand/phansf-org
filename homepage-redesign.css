@@ -71,12 +71,12 @@ nav { flex-wrap: nowrap; }
 .phan-history-facts span { color: #626b66; font-size: 13px; line-height: 1.5; }
 
 /* Membership call to action */
-.phan-join { padding-top: 40px; padding-bottom: 40px; }
+.phan-join { padding-top: 28px; padding-bottom: 28px; }
 .phan-join-copy { max-width: 760px; }
-.phan-join .phan-eyebrow { margin-bottom: 10px; }
-.phan-join h2 { font-size: clamp(34px, 4vw, 52px); }
-.phan-join p { max-width: 650px; margin-top: 12px; }
-.phan-join-note { margin-top: 6px !important; color: rgba(255,255,255,.72) !important; font-size: 12px !important; font-weight: 500; letter-spacing: .03em; }
+.phan-join .phan-eyebrow { margin-bottom: 7px; }
+.phan-join h2 { font-size: clamp(32px, 3.5vw, 48px); line-height: 1.1; color: #fff !important; }
+.phan-join p { max-width: 650px; margin-top: 10px; color: rgba(255,255,255,.82); }
+.phan-join-note { margin-top: 5px !important; color: rgba(255,255,255,.72) !important; font-size: 12px !important; font-weight: 500; letter-spacing: .03em; }
 .phan-join .btn { padding: 12px 28px; }
 
 @media (max-width: 1100px) and (min-width: 961px) {
@@ -121,8 +121,8 @@ nav { flex-wrap: nowrap; }
   .phan-character-image { min-height: 390px; max-height: 500px; }
   .phan-character-copy { max-width: none; padding: 72px 22px 82px; }
   .phan-history { grid-template-columns: 1fr; gap: 54px; padding: 78px 22px; }
-  .phan-join { padding: 38px 22px; display: block; }
-  .phan-join .btn { margin-top: 20px; }
+  .phan-join { padding: 28px 22px; display: block; }
+  .phan-join .btn { margin-top: 16px; }
   .phan-location { grid-template-columns: 1fr; gap: 42px; padding: 76px 22px 88px; }
   .phan-location h2 { font-size: clamp(38px, 9vw, 50px); }
 }
