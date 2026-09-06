@@ -42,10 +42,21 @@ if (pagePath === '/' || pagePath === '/index.html') {
     .phan-section-heading h2 { font-size: clamp(32px, 3.5vw, 44px); }
     .phan-mission h2, .phan-neighborhood h2, .phan-guide-heading h2, .phan-character-copy h2, .phan-history-copy h2 { font-size: clamp(36px, 3.6vw, 52px); }
     .phan-life-copy h2 { font-size: clamp(36px, 3.5vw, 48px); }
-    .phan-join h2 { font-size: clamp(30px, 3.2vw, 44px); }
-    .phan-location h2 { font-size: 42px; }
+    .phan-join { background: var(--phan-green-deep); color: #fff; padding: 72px max(32px, calc((100% - 1200px) / 2)); }
+    .phan-join-copy { max-width: 760px; }
+    .phan-join .phan-eyebrow { margin-bottom: 10px; color: #b7c8bd; }
+    .phan-join h2 { max-width: 760px; font-size: clamp(36px, 4vw, 54px); color: #fff; }
+    .phan-join p { max-width: 680px; margin: 18px 0 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.8; }
+    .phan-join-note { margin-top: 18px !important; color: #fff !important; font-size: 15px !important; font-weight: 600; letter-spacing: .01em; }
+    .phan-join-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 24px; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,.45); padding-bottom: 6px; }
+    .phan-join-link:hover { color: #fff; text-decoration: none; border-color: #fff; }
     .phan-section-heading > .phan-section-link { display: none; }
     .phan-mission-heading-line { white-space: nowrap; }
+    @media (max-width: 760px) {
+      .phan-join { padding: 58px 20px 64px; }
+      .phan-join h2 { font-size: clamp(34px, 9vw, 46px); }
+      .phan-join p { font-size: 14px; }
+    }
   `;
   document.head.appendChild(style);
 
@@ -58,6 +69,19 @@ if (pagePath === '/' || pagePath === '/index.html') {
 
   const parkHeading = document.querySelector('.phan-life-copy h2');
   if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
+
+  const joinSection = document.querySelector('.phan-join');
+  if (joinSection) {
+    const existingButton = joinSection.querySelector('a.btn');
+    if (existingButton) existingButton.remove();
+    if (!joinSection.querySelector('.phan-join-link')) {
+      const link = document.createElement('a');
+      link.href = 'membership.html';
+      link.className = 'phan-join-link';
+      link.innerHTML = 'Join PHAN <span aria-hidden="true">&#8594;</span>';
+      joinSection.querySelector('.phan-join-copy')?.appendChild(link);
+    }
+  }
 }
 
 const membershipForm = document.querySelector('#membership-form');
