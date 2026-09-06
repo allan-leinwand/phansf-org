@@ -81,6 +81,40 @@ nav a:hover,
 .phan-card h3 { border-bottom-color: var(--phan-green-rule); }
 .mobile-nav-toggle { color: var(--phan-green-dark); }
 
+/* Richmond Police Station card */
+.police-station-card {
+  max-width: 560px;
+  margin: 28px 0;
+  padding: 26px 28px;
+  background: #fff;
+  border: 1px solid var(--phan-green-border);
+  box-shadow: 0 4px 16px rgba(29,43,35,.035);
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.police-station-card:hover {
+  border-color: #c5d2c9;
+  box-shadow: 0 14px 34px rgba(29,43,35,.09);
+  transform: translateY(-3px);
+}
+.police-station-card h4 {
+  margin: 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--phan-green-rule);
+  color: var(--phan-heading);
+  font-size: 25px;
+  line-height: 1.2;
+}
+.police-station-card h4 a { color: var(--phan-heading); }
+.police-station-card p {
+  margin: 14px 0 0;
+  color: #626b66;
+  font-size: 14px;
+  line-height: 1.7;
+}
+.police-station-card p:last-child { margin-bottom: 0; }
+.police-station-card a[href^="tel:"],
+.police-station-card a[href^="mailto:"] { color: var(--phan-green); font-weight: 500; }
+
 .supervisor-contact-layout {
   display: flex;
   gap: 32px;
@@ -113,6 +147,10 @@ nav a:hover,
 .supervisor-intro { margin-bottom: 0; }
 
 @media (max-width: 760px) {
+  .police-station-card {
+    max-width: none;
+    padding: 22px 24px;
+  }
   .supervisor-contact-layout { gap: 20px; }
   .supervisor-contact-layout > a,
   .supervisor-photo { width: 100%; flex-basis: 100%; }
