@@ -51,6 +51,9 @@ if (pagePath === '/' || pagePath === '/index.html') {
   document.querySelectorAll('.phan-home h1, .phan-home h2').forEach((heading) => {
     heading.textContent = heading.textContent.replace(/\.\s*$/, '').replace(/Presidio Heights/g, 'Presidio\u00a0Heights');
   });
+
+  const parkHeading = document.querySelector('.phan-life-copy h2');
+  if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
 }
 
 if (pagePath === '/board.html') {
