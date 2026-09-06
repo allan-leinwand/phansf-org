@@ -6,6 +6,7 @@
   --phan-green: #3f6650;
   --phan-green-dark: #294836;
   --phan-green-deep: #20372b;
+  --phan-heading: #365446;
   --phan-green-soft: #eef3ef;
   --phan-green-muted: #6f8176;
   --phan-green-border: #d7e0da;
@@ -48,7 +49,7 @@ nav a:hover,
 .phan-card h3,
 .section-title h2,
 .page-content h2,
-.page-content h3 { color: var(--phan-green-deep); }
+.page-content h3 { color: var(--phan-heading); }
 
 /* The membership banner uses the dark green background, so its heading must stay white. */
 .phan-join h2 { color: #fff; }
