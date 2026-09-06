@@ -1,3 +1,8 @@
+const theme = document.createElement('link');
+theme.rel = 'stylesheet';
+theme.href = 'phan-theme.css';
+document.head.appendChild(theme);
+
 const nav = document.querySelector('header nav');
 
 if (nav) {
