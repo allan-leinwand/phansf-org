@@ -48,15 +48,15 @@ if (pagePath === '/' || pagePath === '/index.html') {
     .phan-join h2 { max-width: 760px; font-size: clamp(36px, 4vw, 54px); color: #fff; }
     .phan-join p { max-width: 680px; margin: 18px 0 0; color: rgba(255,255,255,.82); font-size: 15px; line-height: 1.8; }
     .phan-join-note { margin-top: 18px !important; color: #fff !important; font-size: 15px !important; font-weight: 600; letter-spacing: .01em; }
-    .phan-join-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 24px; color: #fff; font-size: 11px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; border-bottom: 1px solid rgba(255,255,255,.45); padding-bottom: 6px; }
-    .phan-join-link:hover { color: #fff; text-decoration: none; border-color: #fff; }
+    .phan-join-link { display: inline-block; margin-top: 24px; }
+    .phan-join-link, .phan-join-link:hover { text-decoration: none; }
     .phan-section-heading > .phan-section-link { display: none; }
     .phan-mission-heading-line { white-space: nowrap; }
-    .phan-join-heading-line { white-space: nowrap; }
     @media (max-width: 760px) {
       .phan-join { padding: 58px 20px 64px; }
       .phan-join h2 { font-size: clamp(34px, 9vw, 46px); }
       .phan-join p { font-size: 14px; }
+      .phan-join-link { margin-top: 24px; }
     }
   `;
   document.head.appendChild(style);
@@ -68,9 +68,6 @@ if (pagePath === '/' || pagePath === '/index.html') {
   const missionHeading = document.querySelector('.phan-mission h2');
   if (missionHeading) missionHeading.innerHTML = '<span class="phan-mission-heading-line">Your neighborhood.</span> Your voice';
 
-  const joinHeading = document.querySelector('.phan-join h2');
-  if (joinHeading) joinHeading.innerHTML = 'Help shape the neighborhood <span class="phan-join-heading-line">you call home.</span>';
-
   const parkHeading = document.querySelector('.phan-life-copy h2');
   if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
 
@@ -81,8 +78,8 @@ if (pagePath === '/' || pagePath === '/index.html') {
     if (!joinSection.querySelector('.phan-join-link')) {
       const link = document.createElement('a');
       link.href = 'membership.html';
-      link.className = 'phan-join-link';
-      link.innerHTML = 'Join PHAN <span aria-hidden="true">&#8594;</span>';
+      link.className = 'phan-join-link btn btn-light';
+      link.textContent = 'Join PHAN';
       joinSection.querySelector('.phan-join-copy')?.appendChild(link);
     }
   }
