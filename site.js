@@ -39,7 +39,7 @@ if (pagePath === '/' || pagePath === '/index.html') {
   const style = document.createElement('style');
   style.textContent = `
     .phan-hero h1 { font-size: clamp(44px, 5vw, 68px); }
-    .phan-section-heading h2 { font-size: clamp(32px, 3.5vw, 44px); }
+    .phan-section-heading h2 { font-size: clamp(32px, 3.5vw, 44px); max-width: 1100px; white-space: nowrap; }
     .phan-mission h2, .phan-neighborhood h2, .phan-guide-heading h2, .phan-character-copy h2, .phan-history-copy h2 { font-size: clamp(36px, 3.6vw, 52px); }
     .phan-life-copy h2 { font-size: clamp(36px, 3.5vw, 48px); }
     .phan-join { background: var(--phan-green-deep); color: #fff; padding: 72px max(32px, calc((100% - 1200px) / 2)); }
@@ -52,11 +52,15 @@ if (pagePath === '/' || pagePath === '/index.html') {
     .phan-join-link, .phan-join-link:hover { text-decoration: none; }
     .phan-section-heading > .phan-section-link { display: none; }
     .phan-mission-heading-line { white-space: nowrap; }
+    .phan-guide-heading { max-width: 1100px; }
+    .phan-guide-heading h2 { max-width: 1100px; white-space: nowrap; }
+    .phan-guide-heading p { max-width: 1100px; }
     @media (max-width: 760px) {
       .phan-join { padding: 58px 20px 64px; }
       .phan-join h2 { font-size: clamp(34px, 9vw, 46px); white-space: normal; }
       .phan-join p { font-size: 14px; }
       .phan-join-link { margin-top: 24px; }
+      .phan-section-heading h2, .phan-guide-heading h2 { white-space: normal; }
     }
   `;
   document.head.appendChild(style);
