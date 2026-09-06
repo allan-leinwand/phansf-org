@@ -84,11 +84,12 @@ nav a:hover,
 .supervisor-contact-layout {
   display: flex;
   gap: 32px;
-  align-items: flex-start;
+  align-items: stretch;
   margin-top: 24px;
   flex-wrap: wrap;
 }
-.supervisor-contact-layout > a { flex: 0 0 200px; }
+.supervisor-contact-layout > a { flex: 0 0 200px; display: flex; }
+.supervisor-photo { width: 200px; height: 100%; min-height: 200px; object-fit: cover; border-radius: 2px; margin: 0; }
 .supervisor-contact-card {
   flex: 1 1 360px;
   min-width: 0;
@@ -97,6 +98,8 @@ nav a:hover,
   border: 1px solid var(--phan-green-border);
   box-shadow: 0 4px 16px rgba(29,43,35,.035);
   transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+  display: flex;
+  align-items: center;
 }
 .supervisor-contact-card:hover {
   box-shadow: 0 14px 34px rgba(29,43,35,.09);
@@ -106,8 +109,14 @@ nav a:hover,
 .supervisor-contact-card p:last-child { margin-bottom: 0; }
 .supervisor-contact-card > p:first-child { color: var(--phan-muted); }
 .supervisor-contact-card > p:first-child a { color: var(--phan-green); font-weight: 500; }
-.supervisor-details {
-  padding-top: 16px;
-  border-top: 1px solid var(--phan-green-rule);
-}
+.supervisor-details { margin: 12px 0 0; padding-top: 16px; border-top: 1px solid var(--phan-green-rule); }
 .supervisor-details a { color: var(--phan-green); font-weight: 500; }
+.supervisor-intro { margin-bottom: 0; }
+
+@media (max-width: 760px) {
+  .supervisor-contact-layout { gap: 20px; }
+  .supervisor-contact-layout > a,
+  .supervisor-photo { width: 100%; flex-basis: 100%; }
+  .supervisor-photo { height: auto; min-height: 0; max-height: 360px; object-fit: cover; }
+  .supervisor-contact-card { flex-basis: 100%; }
+}
