@@ -44,31 +44,14 @@ nav { flex-wrap: nowrap; }
   line-height: 1.2;
   font-weight: 600;
 }
-.phan-card p {
-  margin: 12px 0 0;
-  color: #626b66;
-  font-size: 13px;
-  line-height: 1.6;
-}
-.phan-card .phan-card-link {
-  display: inline-block;
-  margin-top: auto;
-  padding-top: 16px;
-  color: #3d6b4a;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: .13em;
-  text-transform: uppercase;
-}
+.phan-card p { margin: 12px 0 0; color: #626b66; font-size: 13px; line-height: 1.6; }
+.phan-card .phan-card-link { display: inline-block; margin-top: auto; padding-top: 16px; color: #3d6b4a; font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
 
-/* Neighborhood guide cards now use the same phan-card class */
 .phan-guide { background: #f3f6f3; padding: 108px max(32px, calc((100% - 1200px) / 2)); }
 .phan-guide-heading { max-width: 760px; margin-bottom: 52px; }
 .phan-guide-heading h2 { font-family: 'Playfair Display', Georgia, serif; color: #1d2b23; font-size: clamp(40px, 4vw, 58px); line-height: 1.12; font-weight: 600; }
 .phan-guide-heading p { margin-top: 22px; max-width: 690px; color: #59635e; font-size: 16px; line-height: 1.85; }
 .phan-guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.phan-guide-card { min-height: 0; padding: 24px 26px 22px; color: inherit; }
-.phan-guide-card > span { display: none; }
 
 /* Architectural character */
 .phan-character { display: grid; grid-template-columns: 1fr 1fr; background: #fff; }
@@ -86,6 +69,13 @@ nav { flex-wrap: nowrap; }
 .phan-history-facts div { display: grid; grid-template-columns: 125px 1fr; align-items: center; gap: 18px; padding: 24px 0; border-bottom: 1px solid #dfe5e1; }
 .phan-history-facts strong { font-family: 'Playfair Display', Georgia, serif; font-size: 31px; color: #3d6b4a; font-weight: 600; }
 .phan-history-facts span { color: #626b66; font-size: 13px; line-height: 1.5; }
+
+/* Membership call to action */
+.phan-join { padding-top: 64px; padding-bottom: 64px; }
+.phan-join-copy { max-width: 780px; }
+.phan-join p { max-width: 690px; }
+.phan-join-note { margin-top: 10px; color: rgba(255,255,255,.82) !important; font-size: 13px !important; font-weight: 500; letter-spacing: .03em; }
+.phan-join .btn { padding: 13px 30px; }
 
 @media (max-width: 1100px) and (min-width: 961px) {
   .header-inner { padding-left: 22px; padding-right: 22px; gap: 14px; }
@@ -125,13 +115,12 @@ nav { flex-wrap: nowrap; }
   .phan-neighborhood-grid { grid-template-columns: 1.1fr .9fr; grid-template-rows: 220px 220px; gap: 6px; }
   .phan-guide { padding: 78px 22px; }
   .phan-guide-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
-  .phan-guide-card { padding: 24px 26px 22px; }
   .phan-character { grid-template-columns: 1fr; }
   .phan-character-image { min-height: 390px; max-height: 500px; }
   .phan-character-copy { max-width: none; padding: 72px 22px 82px; }
   .phan-history { grid-template-columns: 1fr; gap: 54px; padding: 78px 22px; }
-  .phan-join { padding: 68px 22px; display: block; }
-  .phan-join .btn { margin-top: 28px; }
+  .phan-join { padding: 54px 22px; display: block; }
+  .phan-join .btn { margin-top: 26px; }
   .phan-location { grid-template-columns: 1fr; gap: 42px; padding: 76px 22px 88px; }
   .phan-location h2 { font-size: clamp(38px, 9vw, 50px); }
 }
@@ -145,7 +134,6 @@ nav { flex-wrap: nowrap; }
   .phan-pillars div { grid-template-columns: 1fr; gap: 4px; }
   .phan-guide { padding: 64px 20px; }
   .phan-guide-grid { grid-template-columns: 1fr; gap: 10px; }
-  .phan-guide-card { padding: 24px 26px 22px; }
   .phan-character-image { min-height: 300px; }
   .phan-character-copy { padding: 62px 20px 70px; }
   .phan-history { padding: 68px 20px; }
