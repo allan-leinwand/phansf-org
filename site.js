@@ -56,41 +56,6 @@ if (pagePath === '/' || pagePath === '/index.html') {
   if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
 }
 
-if (pagePath === '/board.html') {
-  const theme = document.createElement('link');
-  theme.rel = 'stylesheet';
-  theme.href = 'phan-theme.css';
-  document.head.appendChild(theme);
-
-  const main = document.querySelector('main.page-content');
-  const title = main?.querySelector(':scope > h2');
-  if (main && title) {
-    const h1 = document.createElement('h1');
-    h1.innerHTML = title.innerHTML;
-    title.replaceWith(h1);
-
-    const kicker = document.createElement('span');
-    kicker.className = 'story-kicker';
-    kicker.textContent = 'About PHAN';
-    main.insertBefore(kicker, main.querySelector(':scope > h1'));
-
-    const officersHeading = Array.from(main.querySelectorAll(':scope > h4')).find((heading) => heading.textContent.trim() === 'Officers');
-    if (officersHeading) {
-      const sectionHeading = document.createElement('h2');
-      sectionHeading.textContent = 'Officers';
-      officersHeading.replaceWith(sectionHeading);
-    }
-
-    const boardColumns = main.querySelector('.board-columns');
-    if (boardColumns) {
-      const sectionHeading = document.createElement('h2');
-      sectionHeading.textContent = 'Board of Directors';
-      main.insertBefore(sectionHeading, boardColumns);
-      boardColumns.querySelectorAll(':scope > div > h4').forEach((heading) => heading.remove());
-    }
-  }
-}
-
 const membershipForm = document.querySelector('#membership-form');
 if (membershipForm) {
   const status = membershipForm.querySelector('.form-status');
