@@ -1,0 +1,21 @@
+name: Branch Preview
+
+on:
+  push:
+    branches:
+      - homepage-redesign-sept-2026
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create preview artifact
+        run: |
+          mkdir -p preview
+          cp -R . preview/site
+          echo "Branch: homepage-redesign-sept-2026" > preview/README.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: phan-homepage-redesign-preview
+          path: preview/site

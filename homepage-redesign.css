@@ -1,0 +1,147 @@
+/* ============================================================
+   PHAN homepage refinements
+   ============================================================ */
+.header-inner { min-height: 94px; }
+.site-logo img { max-width: 230px; object-fit: contain; }
+nav { flex-wrap: nowrap; }
+.nav-dropdown > span { user-select: none; }
+.mobile-nav-toggle, .mobile-nav { display: none; }
+.phan-hero { position: relative; min-height: min(76vh, 760px); height: min(76vh, 760px); overflow: hidden; }
+.phan-hero > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 45%; }
+.phan-hero-overlay { background: linear-gradient(90deg, rgba(16,28,20,.78) 0%, rgba(16,28,20,.43) 52%, rgba(16,28,20,.10) 100%); }
+.phan-neighborhood-grid { grid-template-columns: 1.15fr .85fr; grid-template-rows: 280px 280px; }
+.phan-neighborhood-grid img { object-position: center; }
+.phan-neighborhood-grid .phan-photo-tall { object-position: center 42%; }
+
+/* Unified editorial cards */
+.phan-card,
+.phan-guide-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #dce3de;
+  box-shadow: 0 4px 16px rgba(29,43,35,.035);
+  transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.phan-card:hover,
+.phan-guide-card:hover {
+  background: #fff;
+  border-color: #c8d3cb;
+  box-shadow: 0 14px 34px rgba(29,43,35,.09);
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+.phan-card h3,
+.phan-guide-card h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #1d2b23;
+  font-weight: 600;
+}
+.phan-card-link,
+.phan-guide-card b {
+  color: #3d6b4a;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+/* Neighborhood guide */
+.phan-guide { background: #f3f6f3; padding: 108px max(32px, calc((100% - 1200px) / 2)); }
+.phan-guide-heading { max-width: 760px; margin-bottom: 52px; }
+.phan-guide-heading h2 { font-family: 'Playfair Display', Georgia, serif; color: #1d2b23; font-size: clamp(40px, 4vw, 58px); line-height: 1.12; font-weight: 600; }
+.phan-guide-heading p { margin-top: 22px; max-width: 690px; color: #59635e; font-size: 16px; line-height: 1.85; }
+.phan-guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.phan-guide-card { min-height: 0; padding: 24px 26px 22px; color: inherit; }
+.phan-guide-card > span { display: none; }
+.phan-guide-card h3 { margin: 0; padding-bottom: 12px; border-bottom: 1px solid #e0e6e2; font-size: 25px; line-height: 1.2; }
+.phan-guide-card p { margin: 12px 0 0; color: #626b66; font-size: 13px; line-height: 1.6; }
+.phan-guide-card b { display: inline-block; margin-top: auto; padding-top: 16px; font-size: 10px; }
+
+/* Architectural character */
+.phan-character { display: grid; grid-template-columns: 1fr 1fr; background: #fff; }
+.phan-character-image { min-height: 600px; }
+.phan-character-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.phan-character-copy { align-self: center; max-width: 650px; padding: 92px clamp(42px, 7vw, 105px); }
+.phan-character-copy h2 { font-family: 'Playfair Display', Georgia, serif; color: #1d2b23; font-size: clamp(40px, 4vw, 58px); line-height: 1.12; font-weight: 600; }
+.phan-character-copy p { margin-top: 22px; color: #59635e; font-size: 16px; line-height: 1.85; }
+
+/* History */
+.phan-history { max-width: 1200px; margin: 0 auto; padding: 108px 32px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 100px; align-items: center; }
+.phan-history-copy h2 { font-family: 'Playfair Display', Georgia, serif; color: #1d2b23; font-size: clamp(40px, 4vw, 58px); line-height: 1.12; font-weight: 600; }
+.phan-history-copy p { margin-top: 22px; color: #59635e; font-size: 16px; line-height: 1.85; max-width: 720px; }
+.phan-history-facts { border-top: 1px solid #dfe5e1; }
+.phan-history-facts div { display: grid; grid-template-columns: 125px 1fr; align-items: center; gap: 18px; padding: 24px 0; border-bottom: 1px solid #dfe5e1; }
+.phan-history-facts strong { font-family: 'Playfair Display', Georgia, serif; font-size: 31px; color: #3d6b4a; font-weight: 600; }
+.phan-history-facts span { color: #626b66; font-size: 13px; line-height: 1.5; }
+
+@media (max-width: 1100px) and (min-width: 961px) {
+  .header-inner { padding-left: 22px; padding-right: 22px; gap: 14px; }
+  .site-logo img { max-width: 190px; }
+  nav a, .nav-dropdown > span { padding-left: 9px; padding-right: 9px; font-size: 11px; }
+  .nav-cta { padding-left: 14px !important; padding-right: 14px !important; }
+}
+
+@media (max-width: 960px) {
+  .site-header { position: sticky; }
+  .header-inner { min-height: 78px; padding: 0 22px; }
+  .site-logo { padding: 10px 0; }
+  .site-logo img { height: 56px; max-width: 190px; }
+  .header-inner > nav { display: none; }
+  .mobile-nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #d9dfda; background: #fff; color: #315d3f; font-size: 25px; line-height: 1; cursor: pointer; flex-shrink: 0; }
+  .mobile-nav { position: absolute; left: 0; right: 0; top: 100%; display: none; background: #fff; border-bottom: 1px solid #dfe5e1; box-shadow: 0 12px 28px rgba(0,0,0,.08); padding: 8px 22px 18px; max-height: calc(100vh - 78px); overflow-y: auto; }
+  .mobile-nav.is-open { display: block; }
+  .mobile-nav a { display: block; padding: 14px 4px; border-bottom: 1px solid #edf0ee; color: #2f3a34; font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+  .mobile-nav a:last-child { border-bottom: 0; }
+  .mobile-nav .mobile-nav-group { padding: 17px 4px 8px; color: #819087; font-size: 10px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
+  .mobile-nav .mobile-subitem { padding: 11px 4px 11px 22px; color: #5d6962; font-size: 11px; font-weight: 500; letter-spacing: .07em; text-transform: none; }
+  .mobile-nav .mobile-nav-cta { margin-top: 12px; padding: 13px 16px; background: #3d6b4a; color: #fff; text-align: center; border-bottom: 0; }
+  .phan-hero, .phan-hero > img { min-height: 590px; height: 590px; }
+  .phan-hero-content { width: calc(100% - 44px); left: 22px; }
+  .phan-hero h1 { font-size: clamp(42px, 10vw, 62px); }
+  .phan-hero p { font-size: 16px; }
+  .phan-section { padding: 76px 22px; }
+  .phan-section-heading { display: block; margin-bottom: 34px; }
+  .phan-section-heading .phan-section-link { display: inline-block; margin-top: 18px; }
+  .phan-cards { grid-template-columns: 1fr; gap: 14px; }
+  .phan-card, .phan-card + .phan-card { min-height: 0; padding: 28px 24px; border: 1px solid #dce3de; }
+  .phan-card h3 { margin-top: 0; }
+  .phan-mission { grid-template-columns: 1fr; }
+  .phan-mission-image { min-height: 360px; max-height: 460px; }
+  .phan-mission-copy { padding: 64px 22px 72px; }
+  .phan-pillars div { grid-template-columns: 100px 1fr; }
+  .phan-neighborhood { grid-template-columns: 1fr; gap: 52px; padding: 76px 22px; }
+  .phan-neighborhood-grid { grid-template-columns: 1.1fr .9fr; grid-template-rows: 220px 220px; gap: 6px; }
+  .phan-guide { padding: 78px 22px; }
+  .phan-guide-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .phan-guide-card { padding: 22px 20px 20px; }
+  .phan-guide-card h3 { font-size: 24px; }
+  .phan-character { grid-template-columns: 1fr; }
+  .phan-character-image { min-height: 390px; max-height: 500px; }
+  .phan-character-copy { max-width: none; padding: 72px 22px 82px; }
+  .phan-history { grid-template-columns: 1fr; gap: 54px; padding: 78px 22px; }
+  .phan-join { padding: 68px 22px; display: block; }
+  .phan-join .btn { margin-top: 28px; }
+  .phan-location { grid-template-columns: 1fr; gap: 42px; padding: 76px 22px 88px; }
+  .phan-location h2 { font-size: clamp(38px, 9vw, 50px); }
+}
+
+@media (max-width: 560px) {
+  .phan-hero, .phan-hero > img { min-height: 560px; height: 560px; }
+  .phan-hero-content { top: auto; bottom: 52px; transform: none; }
+  .phan-hero-actions { flex-wrap: wrap; gap: 18px; }
+  .phan-neighborhood-grid { grid-template-columns: 1fr; grid-template-rows: 300px 190px 190px; }
+  .phan-neighborhood-grid .phan-photo-tall { grid-row: auto; }
+  .phan-pillars div { grid-template-columns: 1fr; gap: 4px; }
+  .phan-guide { padding: 64px 20px; }
+  .phan-guide-grid { grid-template-columns: 1fr; gap: 10px; }
+  .phan-guide-card { padding: 21px 20px 19px; }
+  .phan-guide-card h3 { font-size: 25px; padding-bottom: 10px; }
+  .phan-guide-card p { margin-top: 10px; }
+  .phan-character-image { min-height: 300px; }
+  .phan-character-copy { padding: 62px 20px 70px; }
+  .phan-history { padding: 68px 20px; }
+  .phan-history-facts div { grid-template-columns: 100px 1fr; }
+  .phan-history-facts strong { font-size: 27px; }
+  .phan-mission-image { min-height: 300px; }
+}
