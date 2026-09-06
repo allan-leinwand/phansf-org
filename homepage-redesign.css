@@ -13,18 +13,50 @@ nav { flex-wrap: nowrap; }
 .phan-neighborhood-grid img { object-position: center; }
 .phan-neighborhood-grid .phan-photo-tall { object-position: center 42%; }
 
-/* Neighborhood guide: restrained editorial cards without numbered labels. */
+/* Unified editorial cards */
+.phan-card,
+.phan-guide-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #dce3de;
+  box-shadow: 0 4px 16px rgba(29,43,35,.035);
+  transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.phan-card:hover,
+.phan-guide-card:hover {
+  background: #fff;
+  border-color: #c8d3cb;
+  box-shadow: 0 14px 34px rgba(29,43,35,.09);
+  text-decoration: none;
+  transform: translateY(-3px);
+}
+.phan-card h3,
+.phan-guide-card h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #1d2b23;
+  font-weight: 600;
+}
+.phan-card-link,
+.phan-guide-card b {
+  color: #3d6b4a;
+  font-weight: 600;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+/* Neighborhood guide */
 .phan-guide { background: #f3f6f3; padding: 108px max(32px, calc((100% - 1200px) / 2)); }
 .phan-guide-heading { max-width: 760px; margin-bottom: 52px; }
 .phan-guide-heading h2 { font-family: 'Playfair Display', Georgia, serif; color: #1d2b23; font-size: clamp(40px, 4vw, 58px); line-height: 1.12; font-weight: 600; }
 .phan-guide-heading p { margin-top: 22px; max-width: 690px; color: #59635e; font-size: 16px; line-height: 1.85; }
 .phan-guide-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
-.phan-guide-card { position: relative; display: flex; flex-direction: column; min-height: 0; padding: 24px 26px 22px; background: rgba(255,255,255,.62); border: 1px solid #dce3de; color: inherit; transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
-.phan-guide-card:hover { background: #fff; border-color: #c8d3cb; box-shadow: 0 12px 28px rgba(29,43,35,.07); text-decoration: none; transform: translateY(-2px); }
+.phan-guide-card { min-height: 0; padding: 24px 26px 22px; color: inherit; }
 .phan-guide-card > span { display: none; }
-.phan-guide-card h3 { margin: 0; padding-bottom: 12px; border-bottom: 1px solid #e0e6e2; font-family: 'Playfair Display', Georgia, serif; font-size: 25px; color: #1d2b23; line-height: 1.2; font-weight: 600; }
+.phan-guide-card h3 { margin: 0; padding-bottom: 12px; border-bottom: 1px solid #e0e6e2; font-size: 25px; line-height: 1.2; }
 .phan-guide-card p { margin: 12px 0 0; color: #626b66; font-size: 13px; line-height: 1.6; }
-.phan-guide-card b { display: inline-block; margin-top: auto; padding-top: 16px; color: #3d6b4a; font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
+.phan-guide-card b { display: inline-block; margin-top: auto; padding-top: 16px; font-size: 10px; }
 
 /* Architectural character */
 .phan-character { display: grid; grid-template-columns: 1fr 1fr; background: #fff; }
@@ -34,7 +66,7 @@ nav { flex-wrap: nowrap; }
 .phan-character-copy h2 { font-family: 'Playfair Display', Georgia, serif; color: #1d2b23; font-size: clamp(40px, 4vw, 58px); line-height: 1.12; font-weight: 600; }
 .phan-character-copy p { margin-top: 22px; color: #59635e; font-size: 16px; line-height: 1.85; }
 
-/* History: concise facts rather than another long editorial essay. */
+/* History */
 .phan-history { max-width: 1200px; margin: 0 auto; padding: 108px 32px; display: grid; grid-template-columns: 1.2fr .8fr; gap: 100px; align-items: center; }
 .phan-history-copy h2 { font-family: 'Playfair Display', Georgia, serif; color: #1d2b23; font-size: clamp(40px, 4vw, 58px); line-height: 1.12; font-weight: 600; }
 .phan-history-copy p { margin-top: 22px; color: #59635e; font-size: 16px; line-height: 1.85; max-width: 720px; }
@@ -71,10 +103,9 @@ nav { flex-wrap: nowrap; }
   .phan-section { padding: 76px 22px; }
   .phan-section-heading { display: block; margin-bottom: 34px; }
   .phan-section-heading .phan-section-link { display: inline-block; margin-top: 18px; }
-  .phan-cards { grid-template-columns: 1fr; }
-  .phan-card, .phan-card + .phan-card { min-height: 0; padding: 28px 0; border-right: 0; border-bottom: 1px solid #dfe5e1; }
-  .phan-card:last-child { border-bottom: 0; }
-  .phan-card h3 { margin-top: 24px; }
+  .phan-cards { grid-template-columns: 1fr; gap: 14px; }
+  .phan-card, .phan-card + .phan-card { min-height: 0; padding: 28px 24px; border: 1px solid #dce3de; }
+  .phan-card h3 { margin-top: 0; }
   .phan-mission { grid-template-columns: 1fr; }
   .phan-mission-image { min-height: 360px; max-height: 460px; }
   .phan-mission-copy { padding: 64px 22px 72px; }
