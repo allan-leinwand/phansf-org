@@ -52,6 +52,7 @@ if (pagePath === '/' || pagePath === '/index.html') {
     .phan-join-link:hover { color: #fff; text-decoration: none; border-color: #fff; }
     .phan-section-heading > .phan-section-link { display: none; }
     .phan-mission-heading-line { white-space: nowrap; }
+    .phan-join-heading-line { white-space: nowrap; }
     @media (max-width: 760px) {
       .phan-join { padding: 58px 20px 64px; }
       .phan-join h2 { font-size: clamp(34px, 9vw, 46px); }
@@ -66,6 +67,9 @@ if (pagePath === '/' || pagePath === '/index.html') {
 
   const missionHeading = document.querySelector('.phan-mission h2');
   if (missionHeading) missionHeading.innerHTML = '<span class="phan-mission-heading-line">Your neighborhood.</span> Your voice';
+
+  const joinHeading = document.querySelector('.phan-join h2');
+  if (joinHeading) joinHeading.innerHTML = 'Help shape the neighborhood <span class="phan-join-heading-line">you call home.</span>';
 
   const parkHeading = document.querySelector('.phan-life-copy h2');
   if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
