@@ -38,6 +38,7 @@ if (nav) {
 if (pagePath === '/' || pagePath === '/index.html') {
   const style = document.createElement('style');
   style.textContent = `
+    .phan-hero h1 { font-size: clamp(44px, 5vw, 68px); }
     .phan-section-heading h2 { font-size: clamp(32px, 3.5vw, 44px); }
     .phan-mission h2, .phan-neighborhood h2, .phan-guide-heading h2, .phan-character-copy h2, .phan-history-copy h2 { font-size: clamp(36px, 3.6vw, 52px); }
     .phan-life-copy h2 { font-size: clamp(36px, 3.5vw, 48px); }
