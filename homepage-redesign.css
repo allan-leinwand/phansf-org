@@ -1,9 +1,9 @@
 /* ============================================================
    PHAN homepage refinements
    ============================================================ */
-.header-inner { min-height: 94px; }
+.header-inner { min-height: 100px; }
 .site-logo { display: flex; align-items: center; }
-.site-logo img { display: block; height: 86px; width: auto; max-width: 300px; object-fit: contain; }
+.site-logo img { display: block; width: 360px; height: auto; max-width: 360px; object-fit: contain; }
 nav { flex-wrap: nowrap; }
 .nav-dropdown > span { user-select: none; }
 .mobile-nav-toggle, .mobile-nav { display: none; }
@@ -78,7 +78,7 @@ nav { flex-wrap: nowrap; }
 
 @media (max-width: 1100px) and (min-width: 961px) {
   .header-inner { padding-left: 22px; padding-right: 22px; gap: 14px; }
-  .site-logo img { height: 80px; max-width: 270px; }
+  .site-logo img { width: 320px; max-width: 320px; }
   nav a, .nav-dropdown > span { padding-left: 9px; padding-right: 9px; font-size: 11px; }
   .nav-cta { padding-left: 14px !important; padding-right: 14px !important; }
 }
@@ -87,7 +87,7 @@ nav { flex-wrap: nowrap; }
   .site-header { position: sticky; }
   .header-inner { min-height: 78px; padding: 0 22px; }
   .site-logo { padding: 2px 0; }
-  .site-logo img { height: 68px; max-width: 220px; }
+  .site-logo img { width: 250px; max-width: 250px; }
   .header-inner > nav { display: none; }
   .mobile-nav-toggle { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #d9dfda; background: #fff; color: #315d3f; font-size: 25px; line-height: 1; cursor: pointer; flex-shrink: 0; }
   .mobile-nav { position: absolute; left: 0; right: 0; top: 100%; display: none; background: #fff; border-bottom: 1px solid #dfe5e1; box-shadow: 0 12px 28px rgba(0,0,0,.08); padding: 8px 22px 18px; max-height: calc(100vh - 78px); overflow-y: auto; }
