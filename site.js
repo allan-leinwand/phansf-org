@@ -52,8 +52,8 @@ if (pagePath === '/' || pagePath === '/index.html') {
     heading.textContent = heading.textContent.replace(/\.\s*$/, '').replace(/Presidio Heights/g, 'Presidio\u00a0Heights');
   });
 
-  const neighborhoodHeading = document.querySelector('.phan-neighborhood h2');
-  if (neighborhoodHeading) neighborhoodHeading.innerHTML = 'Your neighborhood.<br>Your voice';
+  const missionHeading = document.querySelector('.phan-mission h2');
+  if (missionHeading) missionHeading.innerHTML = 'Your&nbsp;neighborhood. Your&nbsp;voice';
 
   const parkHeading = document.querySelector('.phan-life-copy h2');
   if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
