@@ -45,6 +45,7 @@ if (pagePath === '/' || pagePath === '/index.html') {
     .phan-join h2 { font-size: clamp(30px, 3.2vw, 44px); }
     .phan-location h2 { font-size: 42px; }
     .phan-section-heading > .phan-section-link { display: none; }
+    .phan-mission-heading-line { white-space: nowrap; }
   `;
   document.head.appendChild(style);
 
@@ -53,7 +54,7 @@ if (pagePath === '/' || pagePath === '/index.html') {
   });
 
   const missionHeading = document.querySelector('.phan-mission h2');
-  if (missionHeading) missionHeading.innerHTML = 'Your neighborhood. Your voice';
+  if (missionHeading) missionHeading.innerHTML = '<span class="phan-mission-heading-line">Your neighborhood.</span> Your voice';
 
   const parkHeading = document.querySelector('.phan-life-copy h2');
   if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
