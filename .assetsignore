@@ -1,0 +1,7 @@
+.git/
+.github/
+.wrangler/
+preview/
+node_modules/
+*.map
+.DS_Store
