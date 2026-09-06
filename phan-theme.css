@@ -73,8 +73,41 @@ nav a:hover,
 .newsletter-links a:hover { background: var(--phan-green); color: #fff; }
 
 .phan-card,
-.site-card { border-color: var(--phan-green-border); }
+.site-card,
+.supervisor-contact-card { border-color: var(--phan-green-border); }
 .phan-card:hover,
-.site-card:hover { border-color: #c5d2c9; }
+.site-card:hover,
+.supervisor-contact-card:hover { border-color: #c5d2c9; }
 .phan-card h3 { border-bottom-color: var(--phan-green-rule); }
 .mobile-nav-toggle { color: var(--phan-green-dark); }
+
+.supervisor-contact-layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+.supervisor-contact-layout > a { flex: 0 0 200px; }
+.supervisor-contact-card {
+  flex: 1 1 360px;
+  min-width: 0;
+  padding: 24px 26px;
+  background: #fff;
+  border: 1px solid var(--phan-green-border);
+  box-shadow: 0 4px 16px rgba(29,43,35,.035);
+  transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+.supervisor-contact-card:hover {
+  box-shadow: 0 14px 34px rgba(29,43,35,.09);
+  transform: translateY(-3px);
+}
+.supervisor-contact-card p { margin-bottom: 16px; }
+.supervisor-contact-card p:last-child { margin-bottom: 0; }
+.supervisor-contact-card > p:first-child { color: var(--phan-muted); }
+.supervisor-contact-card > p:first-child a { color: var(--phan-green); font-weight: 500; }
+.supervisor-details {
+  padding-top: 16px;
+  border-top: 1px solid var(--phan-green-rule);
+}
+.supervisor-details a { color: var(--phan-green); font-weight: 500; }
