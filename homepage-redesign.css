@@ -63,7 +63,7 @@
 .phan-character-copy p { margin: 20px 0 0; color: var(--phan-muted); font-size: 15px; line-height: 1.8; }
 
 /* New visual/content beat: a place people recognize, not just a generic neighborhood image. */
-.phan-life { display: grid; grid-template-columns: 1.05fr .95fr; background: #fff; }
+.phan-life { display: grid; grid-template-columns: 1.05fr .95fr; background: var(--phan-green-soft); }
 .phan-life-image { min-height: 470px; }
 .phan-life-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
 .phan-life-copy { align-self: center; max-width: 650px; padding: 72px clamp(40px, 7vw, 100px); }
