@@ -1,6 +1,17 @@
 const nav = document.querySelector('header nav');
 
 if (nav) {
+  const cta = nav.querySelector(':scope > .nav-cta');
+  if (cta) cta.textContent = 'Join PHAN';
+
+  const aboutMenu = nav.querySelector('.nav-dropdown .dropdown-menu');
+  if (aboutMenu && !aboutMenu.querySelector('a[href="about.html"]')) {
+    const aboutLink = document.createElement('a');
+    aboutLink.href = 'about.html';
+    aboutLink.textContent = 'About PHAN';
+    aboutMenu.prepend(aboutLink);
+  }
+
   const header = document.querySelector('.site-header');
   const toggle = document.createElement('button');
   const mobileNav = document.createElement('div');
@@ -64,7 +75,6 @@ if (membershipForm) {
 
   membershipForm.addEventListener('submit', (event) => {
     event.preventDefault();
-
     if (!membershipForm.reportValidity()) return;
 
     const data = new FormData(membershipForm);
