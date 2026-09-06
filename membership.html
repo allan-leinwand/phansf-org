@@ -17,6 +17,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="phan-theme.css"><link rel="stylesheet" href="homepage-redesign.css"><link rel="icon" href="images/PHANTREE.ico">
 <script src="https://www.paypal.com/sdk/js?client-id=BAAoumZ7FjzlPAHJGMBjpBK6s4efrvhwPM-iyXlu--yydh2PoIvlfzYmDN5PpXovDeX5JnxPe-1519F5KU&amp;components=hosted-buttons&amp;enable-funding=venmo&amp;currency=USD"></script>
+<style>
+  .paypal-section { width: min(100%, 380px); margin: 28px auto; padding: 24px 20px 20px; box-sizing: border-box; border: 1px solid #e5e5e5; border-radius: 8px; background: #fafaf8; box-shadow: 0 4px 16px rgba(0,0,0,.06); text-align: center; }
+  .paypal-section > p:first-child { margin: 0 0 16px; font-weight: 500; }
+  .paypal-section > p:last-child { margin-bottom: 0 !important; }
+  #paypal-container-KKU2LFLN4WS9Q { width: 100%; }
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Membership & Dues","url":"https://www.phansf.org/membership.html","about":{"@type":"Organization","name":"Presidio Heights Association of Neighbors","url":"https://www.phansf.org/"}}</script>
 </head>
 <body>
@@ -43,15 +49,15 @@
   <p>Your paid household membership supports PHAN's community activities and its ability to advocate with City Hall and other decision makers on matters important to Presidio Heights.</p>
   <p>Pay securely using PayPal, Venmo, or a credit card using the button below.</p>
 
-  <div class="paypal-section" style="width:fit-content;max-width:100%;margin:24px 0;padding:22px 26px;background:#f7f8f5;border:1px solid #e1e5df;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.05)">
-    <p style="margin:0 0 14px;font-size:14px;font-weight:600;color:#33453a">Pay securely via PayPal, Venmo, or Credit Card</p>
-    <div id="paypal-container-KKU2LFLN4WS9Q" style="width:320px;max-width:100%"></div>
+  <div class="paypal-section">
+    <p>Pay securely via PayPal, Venmo, or Credit Card</p>
+    <div id="paypal-container-KKU2LFLN4WS9Q"></div>
     <script>
       paypal.HostedButtons({
         hostedButtonId: "KKU2LFLN4WS9Q",
       }).render("#paypal-container-KKU2LFLN4WS9Q")
     </script>
-    <p style="margin:12px 0 0;font-size:12px;color:#888">Powered by PayPal</p>
+    <p style="margin-top:16px;font-size:13px;color:#888">Powered by PayPal</p>
   </div>
 
   <hr>
