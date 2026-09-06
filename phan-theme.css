@@ -13,56 +13,34 @@
   --phan-green-hover: #355844;
 }
 
-/* Links, navigation and primary actions */
 a,
 .phan-card-link,
 .phan-section-link,
 .phan-eyebrow,
 .page-content h4,
 .story-kicker,
-.officer-title {
-  color: var(--phan-green);
-}
+.officer-title { color: var(--phan-green); }
 
 a:hover,
 nav a:hover,
 .nav-dropdown:hover > span,
-.dropdown-menu a:hover {
-  color: var(--phan-green-dark);
-}
+.dropdown-menu a:hover { color: var(--phan-green-dark); }
 
 .nav-cta,
 .nav-cta:hover,
 .btn,
 .btn:hover,
-.mobile-nav .mobile-nav-cta {
-  background: var(--phan-green);
-}
-
+.mobile-nav .mobile-nav-cta { background: var(--phan-green); }
 .nav-cta:hover,
-.btn:hover {
-  background: var(--phan-green-dark);
-}
-
+.btn:hover { background: var(--phan-green-dark); }
 .btn-light,
-.btn-light:hover {
-  background: #fff;
-  color: var(--phan-green-dark);
-}
+.btn-light:hover { background: #fff; color: var(--phan-green-dark); }
+.dropdown-menu { border-top-color: var(--phan-green); }
+.dropdown-menu a:hover { background: var(--phan-green-soft); }
 
-.dropdown-menu {
-  border-top-color: var(--phan-green);
-}
-
-.dropdown-menu a:hover {
-  background: var(--phan-green-soft);
-}
-
-/* Shared editorial greens */
 .phan-section-heading h2,
 .phan-mission h2,
 .phan-neighborhood h2,
-.phan-join h2,
 .phan-location h2,
 .phan-guide-heading h2,
 .phan-character-copy h2,
@@ -70,78 +48,32 @@ nav a:hover,
 .phan-card h3,
 .section-title h2,
 .page-content h2,
-.page-content h3 {
-  color: var(--phan-green-deep);
-}
+.page-content h3 { color: var(--phan-green-deep); }
+
+/* The membership banner uses the dark green background, so its heading must stay white. */
+.phan-join h2 { color: #fff; }
 
 .section-title::after,
-.page-content h2::after {
-  background: var(--phan-green);
-}
-
-/* Soft backgrounds and rules */
+.page-content h2::after { background: var(--phan-green); }
 .phan-mission,
-.phan-guide {
-  background: var(--phan-green-soft);
-}
-
+.phan-guide { background: var(--phan-green-soft); }
 .phan-pillars,
 .phan-history-facts,
-.phan-cards {
-  border-color: var(--phan-green-rule);
-}
-
+.phan-cards { border-color: var(--phan-green-rule); }
 .phan-pillars div,
-.phan-history-facts div {
-  border-color: var(--phan-green-rule);
-}
+.phan-history-facts div { border-color: var(--phan-green-rule); }
+.phan-history-facts strong { color: var(--phan-green); }
+.phan-join { background: var(--phan-green-deep); }
+.phan-join .phan-eyebrow { color: #b7c8bd; }
 
-.phan-history-facts strong {
-  color: var(--phan-green);
-}
+.membership-note { background: var(--phan-green-soft); border-color: var(--phan-green-border); border-left: 3px solid var(--phan-green); }
+.page-content blockquote { border-left-color: var(--phan-green); background: #f5f8f6; }
+.newsletter-links a { border-color: var(--phan-green); color: var(--phan-green); }
+.newsletter-links a:hover { background: var(--phan-green); color: #fff; }
 
-.phan-join {
-  background: var(--phan-green-deep);
-}
-
-.phan-join .phan-eyebrow {
-  color: #b7c8bd;
-}
-
-.membership-note {
-  background: var(--phan-green-soft);
-  border-color: var(--phan-green-border);
-  border-left-color: var(--phan-green);
-}
-
-.page-content blockquote {
-  border-left-color: var(--phan-green);
-  background: #f5f8f6;
-}
-
-.newsletter-links a {
-  border-color: var(--phan-green);
-  color: var(--phan-green);
-}
-
-.newsletter-links a:hover {
-  background: var(--phan-green);
-  color: #fff;
-}
-
-/* Unified homepage card treatment */
-.phan-card {
-  border-color: var(--phan-green-border);
-}
-
-.phan-card:hover {
-  border-color: #c5d2c9;
-}
-
-.phan-card h3 {
-  border-bottom-color: var(--phan-green-rule);
-}
-
-.mobile-nav-toggle {
-  color: var(--phan-green-dark);
-}
+.phan-card,
+.site-card { border-color: var(--phan-green-border); }
+.phan-card:hover,
+.site-card:hover { border-color: #c5d2c9; }
+.phan-card h3 { border-bottom-color: var(--phan-green-rule); }
+.mobile-nav-toggle { color: var(--phan-green-dark); }
