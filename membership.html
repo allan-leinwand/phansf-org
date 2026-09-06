@@ -16,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="phan-theme.css"><link rel="stylesheet" href="homepage-redesign.css"><link rel="icon" href="images/PHANTREE.ico">
+<script src="https://www.paypal.com/sdk/js?client-id=BAAoumZ7FjzlPAHJGMBjpBK6s4efrvhwPM-iyXlu--yydh2PoIvlfzYmDN5PpXovDeX5JnxPe-1519F5KU&amp;components=hosted-buttons&amp;enable-funding=venmo&amp;currency=USD"></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Membership & Dues","url":"https://www.phansf.org/membership.html","about":{"@type":"Organization","name":"Presidio Heights Association of Neighbors","url":"https://www.phansf.org/"}}</script>
 </head>
 <body>
@@ -44,7 +45,12 @@
 
   <div class="paypal-section">
     <p>Pay securely via PayPal, Venmo, or Credit Card</p>
-    <a href="https://www.paypal.com" target="_blank" rel="noopener" class="paypal-btn">Pay $50 &ndash; Join / Renew</a>
+    <div id="paypal-container-KKU2LFLN4WS9Q"></div>
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "KKU2LFLN4WS9Q",
+      }).render("#paypal-container-KKU2LFLN4WS9Q")
+    </script>
     <p style="margin-top:16px;font-size:13px;color:#888">Powered by PayPal</p>
   </div>
 
