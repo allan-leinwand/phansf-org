@@ -47,6 +47,10 @@ if (pagePath === '/' || pagePath === '/index.html') {
     .phan-section-heading > .phan-section-link { display: none; }
   `;
   document.head.appendChild(style);
+
+  document.querySelectorAll('.phan-home h1, .phan-home h2').forEach((heading) => {
+    heading.textContent = heading.textContent.replace(/\.\s*$/, '').replace(/Presidio Heights/g, 'Presidio\u00a0Heights');
+  });
 }
 
 if (pagePath === '/board.html') {
@@ -66,6 +70,13 @@ if (pagePath === '/board.html') {
     kicker.className = 'story-kicker';
     kicker.textContent = 'About PHAN';
     main.insertBefore(kicker, main.querySelector(':scope > h1'));
+
+    const officersHeading = Array.from(main.querySelectorAll(':scope > h4')).find((heading) => heading.textContent.trim() === 'Officers');
+    if (officersHeading) {
+      const sectionHeading = document.createElement('h2');
+      sectionHeading.textContent = 'Officers';
+      officersHeading.replaceWith(sectionHeading);
+    }
 
     const boardColumns = main.querySelector('.board-columns');
     if (boardColumns) {
