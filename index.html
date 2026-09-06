@@ -26,6 +26,15 @@
   <link rel="stylesheet" href="homepage-redesign.css">
   <link rel="stylesheet" href="phan-theme.css">
   <link rel="icon" href="images/PHANTREE.ico">
+  <style>
+    /* Keep alternating editorial sections visually distinct on desktop. */
+    .phan-life { grid-template-columns: .95fr 1.05fr; }
+    .phan-life-copy { grid-column: 1; grid-row: 1; }
+    .phan-life-image { grid-column: 2; grid-row: 1; }
+    @media (max-width: 760px) {
+      .phan-life-copy, .phan-life-image { grid-column: auto; grid-row: auto; }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
