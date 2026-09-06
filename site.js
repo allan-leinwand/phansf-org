@@ -53,7 +53,7 @@ if (pagePath === '/' || pagePath === '/index.html') {
   });
 
   const missionHeading = document.querySelector('.phan-mission h2');
-  if (missionHeading) missionHeading.innerHTML = 'Your&nbsp;neighborhood. Your&nbsp;voice';
+  if (missionHeading) missionHeading.innerHTML = 'Your neighborhood. Your voice';
 
   const parkHeading = document.querySelector('.phan-life-copy h2');
   if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
