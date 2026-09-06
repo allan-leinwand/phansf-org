@@ -1,57 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The Presidio Heights Association of Neighbors (PHAN) connects residents, advocates on local issues, and helps preserve the character and community of Presidio Heights in San Francisco.">
-  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="description" content="Presidio Heights Association of Neighbors (PHAN) connects residents, advocates for the neighborhood, and helps preserve what makes Presidio Heights special.">
   <link rel="canonical" href="https://www.phansf.org/">
-  <meta name="theme-color" content="#20372b">
-  <meta property="og:title" content="Presidio Heights Association of Neighbors (PHAN)">
-  <meta property="og:description" content="Neighbors connected by community. PHAN advocates for Presidio Heights, keeps residents informed, and helps shape the neighborhood's future.">
+  <meta property="og:title" content="Presidio Heights Association of Neighbors | PHAN">
+  <meta property="og:description" content="A neighborhood connected by neighbors. PHAN brings Presidio Heights residents together and advocates for the community.">
+  <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.phansf.org/">
   <meta property="og:image" content="https://www.phansf.org/images/chrissy-field.jpg">
-  <meta property="og:image:alt" content="Golden Gate Bridge and Crissy Field near Presidio Heights">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Presidio Heights Association of Neighbors">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Presidio Heights Association of Neighbors (PHAN)">
-  <meta name="twitter:description" content="The neighborhood association for Presidio Heights in San Francisco.">
-  <meta name="twitter:image" content="https://www.phansf.org/images/chrissy-field.jpg">
-  <title>Presidio Heights Association of Neighbors (PHAN) | San Francisco</title>
+  <title>Presidio Heights Association of Neighbors | PHAN</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="homepage-redesign.css">
   <link rel="stylesheet" href="phan-theme.css">
-  <link rel="icon" href="images/PHANTREE.ico">
-  <style>
-    /* Keep alternating editorial sections visually distinct on desktop. */
-    .phan-life { grid-template-columns: .95fr 1.05fr; }
-    .phan-life-copy { grid-column: 1; grid-row: 1; }
-    .phan-life-image { grid-column: 2; grid-row: 1; }
-    @media (max-width: 760px) {
-      .phan-life-copy, .phan-life-image { grid-column: auto; grid-row: auto; }
-    }
-  </style>
+  <link rel="stylesheet" href="homepage-redesign.css">
   <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@graph":[
-      {"@type":"Organization","@id":"https://www.phansf.org/#organization","name":"Presidio Heights Association of Neighbors","alternateName":"PHAN","url":"https://www.phansf.org/","email":"info@phansf.org","logo":"https://www.phansf.org/images/PHANTREE.ico","description":"The volunteer neighborhood association for Presidio Heights in San Francisco.","address":{"@type":"PostalAddress","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94129","addressCountry":"US"},"sameAs":["https://www.x.com/phansf","https://www.instagram.com/phan_sf"]},
-      {"@type":"WebSite","@id":"https://www.phansf.org/#website","url":"https://www.phansf.org/","name":"Presidio Heights Association of Neighbors (PHAN)","publisher":{"@id":"https://www.phansf.org/#organization"},"inLanguage":"en-US"},
-      {"@type":"WebPage","@id":"https://www.phansf.org/#webpage","url":"https://www.phansf.org/","name":"Presidio Heights Association of Neighbors (PHAN)","isPartOf":{"@id":"https://www.phansf.org/#website"},"about":{"@id":"https://www.phansf.org/#organization"},"mentions":{"@type":"Place","name":"The Presidio","url":"https://presidio.gov/","description":"A 1,491-acre national park site adjoining Presidio Heights in San Francisco."},"primaryImageOfPage":{"@type":"ImageObject","url":"https://www.phansf.org/images/chrissy-field.jpg"},"inLanguage":"en-US"}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"Organization","name":"Presidio Heights Association of Neighbors","alternateName":"PHAN","url":"https://www.phansf.org/","email":"info@phansf.org","address":{"@type":"PostalAddress","postOfficeBoxNumber":"29503","addressLocality":"San Francisco","addressRegion":"CA","postalCode":"94129","addressCountry":"US"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Presidio Heights Association of Neighbors","url":"https://www.phansf.org/"}
   </script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">Skip to content</a>
 <header class="site-header">
   <div class="header-inner">
-    <a class="site-logo" href="index.html"><img src="images/PHAN_BANNER_TREE.jpg" alt="Presidio Heights Association of Neighbors (PHAN)"></a>
-    <nav aria-label="Primary navigation">
+    <a class="site-logo" href="index.html"><img src="images/phan-logo.png" alt="Presidio Heights Association of Neighbors"></a>
+    <button class="mobile-nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu"><span></span><span></span><span></span></button>
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <div class="nav-dropdown"><span>About &#9662;</span><div class="dropdown-menu">
         <a href="about.html">About PHAN</a><a href="board.html">Board of Directors</a><a href="membership.html">Membership &amp; Dues</a><a href="events.html">Events</a><a href="neighborhood-projects.html">Neighborhood Projects</a>
@@ -75,9 +55,9 @@
     <span class="phan-eyebrow">Stay connected</span><h2>What's happening in Presidio Heights</h2>
   </div><a href="neighborhood-projects.html" class="phan-section-link">Explore neighborhood projects <span aria-hidden="true">&#8594;</span></a></div>
     <div class="phan-cards">
-      <a class="phan-card" href="newsletter.html"><h3>PHAN News</h3><p>Read the latest updates and keep up with what matters in Presidio Heights.</p><span class="phan-card-link">Read the newsletter <span aria-hidden="true">&#8594;</span></span></a>
-      <a class="phan-card" href="events.html"><h3>Community Events</h3><p>Meet your neighbors and participate in conversations about the community.</p><span class="phan-card-link">See events <span aria-hidden="true">&#8594;</span></span></a>
-      <a class="phan-card" href="neighborhood-projects.html"><h3>Neighborhood Projects</h3><p>Stay informed about development projects and issues affecting the neighborhood.</p><span class="phan-card-link">Learn more <span aria-hidden="true">&#8594;</span></span></a>
+      <a class="phan-card" href="newsletter.html"><h3>PHAN News</h3><p>Latest updates from PHAN and what's happening around the neighborhood.</p><span class="phan-card-link">Read the newsletter <span aria-hidden="true">&#8594;</span></span></a>
+      <a class="phan-card" href="events.html"><h3>Community Events</h3><p>Meet neighbors, join local events, and stay connected.</p><span class="phan-card-link">See events <span aria-hidden="true">&#8594;</span></span></a>
+      <a class="phan-card" href="neighborhood-projects.html"><h3>Neighborhood Projects</h3><p>Follow development, city issues, and projects shaping the neighborhood.</p><span class="phan-card-link">Learn more <span aria-hidden="true">&#8594;</span></span></a>
     </div>
   </section>
 
@@ -99,12 +79,12 @@
   <section class="phan-guide" id="neighborhood-guide">
     <div class="phan-guide-heading"><span class="phan-eyebrow">Know your neighborhood</span><h2>The places that define Presidio Heights.</h2><p>From the Presidio at our doorstep to the streets where neighbors shop, walk, gather, learn, and play, these are the places that give Presidio Heights its daily rhythm.</p></div>
     <div class="phan-guide-grid">
-      <a class="phan-card" href="https://presidio.gov/" target="_blank" rel="noopener"><h3>The Presidio</h3><p>A 1,491-acre national park site at the edge of the neighborhood, with forests, trails, historic sites, recreation, open space, and some of San Francisco's best views. The Presidio Gate, Lovers Lane, and Presidio Wall Park are among the closest connections to neighborhood life.</p><span class="phan-card-link">Explore the Presidio &#8594;</span></a>
-      <a class="phan-card" href="https://sacramentostreetsf.com/shops/" target="_blank" rel="noopener"><h3>Sacramento Street</h3><p>Our neighborhood main street is a lively local shopping and dining district, with independent merchants, restaurants, design shops, boutiques, and services that bring neighbors together and give the street its distinctive character.</p><span class="phan-card-link">Explore Sacramento Street merchants &#8594;</span></a>
-      <a class="phan-card" href="https://www.google.com/maps/search/Julius+Kahn+Playground,+San+Francisco" target="_blank" rel="noopener"><h3>Parks &amp; Recreation</h3><p>Julius Kahn Playground, the Presidio Wall, nearby trails, the golf course, and Alta Plaza make outdoor life part of the neighborhood.</p><span class="phan-card-link">Find local parks &#8594;</span></a>
-      <a class="phan-card" href="#architecture"><h3>Architecture</h3><p>Victorian, Edwardian, Tudor, Spanish Revival, Mediterranean, and other early-20th-century styles shape the neighborhood's streetscape.</p><span class="phan-card-link">Discover the character &#8594;</span></a>
-      <a class="phan-card" href="#history"><h3>History</h3><p>Presidio Heights grew as San Francisco expanded westward, with much of its distinctive residential fabric dating from the early 20th century.</p><span class="phan-card-link">Read the story &#8594;</span></a>
-      <a class="phan-card" href="district.html"><h3>Schools &amp; Getting Around</h3><p>Families have access to schools in and around the Presidio, while Muni, walkable streets, and nearby neighborhood centers keep the area connected.</p><span class="phan-card-link">Neighborhood resources &#8594;</span></a>
+      <a class="phan-card" href="https://presidio.gov/" target="_blank" rel="noopener"><h3>The Presidio</h3><p>A 1,491-acre national park next door, with forests, trails, historic sites, recreation, and sweeping views.</p><span class="phan-card-link">Explore the Presidio &#8594;</span></a>
+      <a class="phan-card" href="https://sacramentostreetsf.com/shops/" target="_blank" rel="noopener"><h3>Sacramento Street</h3><p>Our neighborhood main street, with independent shops, restaurants, design stores, boutiques, and everyday services.</p><span class="phan-card-link">Explore Sacramento Street merchants &#8594;</span></a>
+      <a class="phan-card" href="https://www.google.com/maps/search/Julius+Kahn+Playground,+San+Francisco" target="_blank" rel="noopener"><h3>Parks &amp; Recreation</h3><p>Julius Kahn, the Presidio Wall, nearby trails, the golf course, and Alta Plaza keep outdoor life close.</p><span class="phan-card-link">Find local parks &#8594;</span></a>
+      <a class="phan-card" href="#architecture"><h3>Architecture</h3><p>Victorian, Edwardian, Tudor, Spanish Revival, Mediterranean, and other early-20th-century styles define the streetscape.</p><span class="phan-card-link">Discover the character &#8594;</span></a>
+      <a class="phan-card" href="#history"><h3>History</h3><p>A neighborhood shaped by San Francisco's westward growth, with much of its residential character dating to the early 20th century.</p><span class="phan-card-link">Read the story &#8594;</span></a>
+      <a class="phan-card" href="district.html"><h3>Schools &amp; Getting Around</h3><p>Schools, Muni, walkable streets, and nearby neighborhood centers keep families and residents connected.</p><span class="phan-card-link">Neighborhood resources &#8594;</span></a>
     </div>
   </section>
 
