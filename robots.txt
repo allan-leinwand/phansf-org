@@ -1,0 +1,6 @@
+# PHAN crawler and AI discovery policy
+User-agent: *
+Content-Signal: search=yes, ai-input=yes, ai-train=yes, use=reference
+Allow: /
+
+Sitemap: https://www.phansf.org/sitemap.xml
