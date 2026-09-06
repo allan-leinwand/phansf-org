@@ -1,8 +1,3 @@
-const theme = document.createElement('link');
-theme.rel = 'stylesheet';
-theme.href = 'phan-theme.css';
-document.head.appendChild(theme);
-
 const nav = document.querySelector('header nav');
 
 if (nav) {
@@ -14,12 +9,13 @@ if (nav) {
   toggle.type = 'button';
   toggle.setAttribute('aria-label', 'Open navigation');
   toggle.setAttribute('aria-expanded', 'false');
+  toggle.setAttribute('aria-controls', 'mobile-navigation');
   toggle.textContent = '\u2630';
 
   mobileNav.className = 'mobile-nav';
+  mobileNav.id = 'mobile-navigation';
+  mobileNav.setAttribute('aria-label', 'Mobile navigation');
 
-  // Build a real mobile menu instead of cloning only top-level links.
-  // This preserves every destination from the desktop dropdowns.
   nav.querySelectorAll(':scope > a, :scope > .nav-dropdown').forEach((item) => {
     if (item.matches('a')) {
       const link = item.cloneNode(true);
