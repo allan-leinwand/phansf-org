@@ -35,6 +35,62 @@ if (nav) {
   header.querySelector('.header-inner').append(toggle, mobileNav);
 }
 
+if (pagePath === '/' || pagePath === '/index.html') {
+  const style = document.createElement('style');
+  style.textContent = `
+    .phan-hero h1 { font-size: clamp(44px, 5vw, 68px); }
+    .phan-section-heading h2 { font-size: clamp(32px, 3.5vw, 44px); }
+    .phan-mission h2, .phan-neighborhood h2, .phan-guide-heading h2, .phan-character-copy h2, .phan-history-copy h2 { font-size: clamp(36px, 3.6vw, 52px); }
+    .phan-life-copy h2 { font-size: clamp(36px, 3.5vw, 48px); }
+    .phan-join h2 { font-size: clamp(30px, 3.2vw, 44px); }
+    .phan-location h2 { font-size: 42px; }
+    .phan-section-heading > .phan-section-link { display: none; }
+  `;
+  document.head.appendChild(style);
+
+  document.querySelectorAll('.phan-home h1, .phan-home h2').forEach((heading) => {
+    heading.textContent = heading.textContent.replace(/\.\s*$/, '').replace(/Presidio Heights/g, 'Presidio\u00a0Heights');
+  });
+
+  const parkHeading = document.querySelector('.phan-life-copy h2');
+  if (parkHeading) parkHeading.textContent = parkHeading.textContent.replace("One of San Francisco's great parks is part of daily life", "One of San Francisco's great parks is part of everyday life");
+}
+
+if (pagePath === '/board.html') {
+  const theme = document.createElement('link');
+  theme.rel = 'stylesheet';
+  theme.href = 'phan-theme.css';
+  document.head.appendChild(theme);
+
+  const main = document.querySelector('main.page-content');
+  const title = main?.querySelector(':scope > h2');
+  if (main && title) {
+    const h1 = document.createElement('h1');
+    h1.innerHTML = title.innerHTML;
+    title.replaceWith(h1);
+
+    const kicker = document.createElement('span');
+    kicker.className = 'story-kicker';
+    kicker.textContent = 'About PHAN';
+    main.insertBefore(kicker, main.querySelector(':scope > h1'));
+
+    const officersHeading = Array.from(main.querySelectorAll(':scope > h4')).find((heading) => heading.textContent.trim() === 'Officers');
+    if (officersHeading) {
+      const sectionHeading = document.createElement('h2');
+      sectionHeading.textContent = 'Officers';
+      officersHeading.replaceWith(sectionHeading);
+    }
+
+    const boardColumns = main.querySelector('.board-columns');
+    if (boardColumns) {
+      const sectionHeading = document.createElement('h2');
+      sectionHeading.textContent = 'Board of Directors';
+      main.insertBefore(sectionHeading, boardColumns);
+      boardColumns.querySelectorAll(':scope > div > h4').forEach((heading) => heading.remove());
+    }
+  }
+}
+
 const membershipForm = document.querySelector('#membership-form');
 if (membershipForm) {
   const status = membershipForm.querySelector('.form-status');
