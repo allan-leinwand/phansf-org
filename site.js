@@ -102,7 +102,7 @@ if (membershipForm) {
     .membership-form input::placeholder, .membership-form textarea::placeholder { color: #9aa19c; }
     .membership-form input:focus, .membership-form textarea:focus { border-color: var(--phan-green); background: #fff; box-shadow: 0 0 0 3px rgba(52,91,72,.10); }
     .membership-form .btn { margin-top: 2px; padding: 14px 24px; }
-    .membership-form .form-status { min-height: 20px; margin: 0; color: var(--phan-muted); font-size: 13px; }
+    .membership-form .form-status { min-height: 0; margin: 0; color: var(--phan-muted); font-size: 13px; }
     @media (max-width: 640px) { .membership-form { padding: 24px 20px 26px; margin-top: 24px !important; } .membership-form .btn { width: 100%; } }
   `;
   document.head.appendChild(formStyle);
