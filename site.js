@@ -112,9 +112,17 @@ if (membershipForm) {
     event.preventDefault();
     if (!membershipForm.reportValidity()) return;
     const data = new FormData(membershipForm);
-    const subject = encodeURIComponent('PHAN membership contact');
-    const body = encodeURIComponent([`Name: ${data.get('name')}`, `Email: ${data.get('email')}`, `Address: ${data.get('address')}`, `Additional household members: ${data.get('household') || 'None'}`].join('\n'));
-    window.location.href = `mailto:info@phansf.org?subject=${subject}&body=${body}`;
+    const subject = encodeURIComponent('New PHAN Membership Added');
+    const body = encodeURIComponent([
+      'NEW PHAN MEMBERSHIP',
+      '====================',
+      '',
+      `Full name: ${data.get('name')}`,
+      `Email address: ${data.get('email')}`,
+      `Address in Presidio Heights: ${data.get('address')}`,
+      `Additional household members: ${data.get('household')}`,
+    ].join('\n'));
+    window.location.href = `mailto:phansfboard@gmail.com?subject=${subject}&body=${body}`;
     status.textContent = 'Your email client is opening with your membership details.';
     status.classList.remove('error');
   });
