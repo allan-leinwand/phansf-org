@@ -93,7 +93,7 @@ const membershipForm = document.querySelector('#membership-form');
 if (membershipForm) {
   const formStyle = document.createElement('style');
   formStyle.textContent = `
-    .membership-form { max-width: 680px !important; margin: 30px auto 48px !important; padding: 30px 32px 32px; box-sizing: border-box; border: 1px solid #e1e4df; border-radius: 4px; background: #fff; box-shadow: 0 8px 24px rgba(28,48,38,.07); display: grid; gap: 20px !important; }
+    .membership-form { max-width: 680px !important; margin: 30px auto 48px !important; padding: 30px 32px 20px; box-sizing: border-box; border: 1px solid #e1e4df; border-radius: 4px; background: #fff; box-shadow: 0 8px 24px rgba(28,48,38,.07); display: grid; gap: 20px !important; }
     .membership-form .form-field { display: grid; gap: 8px; }
     .membership-form label { color: #30473b; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
     .membership-form input, .membership-form textarea { width: 100%; box-sizing: border-box; padding: 13px 14px; border: 1px solid #d4d9d4; border-radius: 3px; background: #fff; color: #26342d; font: 400 15px/1.5 Inter, sans-serif; outline: none; transition: border-color .2s, box-shadow .2s, background .2s; }
@@ -103,7 +103,7 @@ if (membershipForm) {
     .membership-form input:focus, .membership-form textarea:focus { border-color: var(--phan-green); background: #fff; box-shadow: 0 0 0 3px rgba(52,91,72,.10); }
     .membership-form .btn { margin-top: 2px; padding: 14px 24px; }
     .membership-form .form-status { min-height: 0; margin: 0; color: var(--phan-muted); font-size: 13px; }
-    @media (max-width: 640px) { .membership-form { padding: 24px 20px 26px; margin-top: 24px !important; } .membership-form .btn { width: 100%; } }
+    @media (max-width: 640px) { .membership-form { padding: 24px 20px 14px; margin-top: 24px !important; } .membership-form .btn { width: 100%; } }
   `;
   document.head.appendChild(formStyle);
 
@@ -112,17 +112,9 @@ if (membershipForm) {
     event.preventDefault();
     if (!membershipForm.reportValidity()) return;
     const data = new FormData(membershipForm);
-    const subject = encodeURIComponent('New PHAN Membership Added');
-    const body = encodeURIComponent([
-      'NEW PHAN MEMBERSHIP',
-      '====================',
-      '',
-      `Full name: ${data.get('name')}`,
-      `Email address: ${data.get('email')}`,
-      `Address in Presidio Heights: ${data.get('address')}`,
-      `Additional household members: ${data.get('household')}`,
-    ].join('\n'));
-    window.location.href = `mailto:phansfboard@gmail.com?subject=${subject}&body=${body}`;
+    const subject = encodeURIComponent('PHAN membership contact');
+    const body = encodeURIComponent([`Name: ${data.get('name')}`, `Email: ${data.get('email')}`, `Address: ${data.get('address')}`, `Additional household members: ${data.get('household') || 'None'}`].join('\n'));
+    window.location.href = `mailto:info@phansf.org?subject=${subject}&body=${body}`;
     status.textContent = 'Your email client is opening with your membership details.';
     status.classList.remove('error');
   });
