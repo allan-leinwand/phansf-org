@@ -93,7 +93,7 @@ const membershipForm = document.querySelector('#membership-form');
 if (membershipForm) {
   const formStyle = document.createElement('style');
   formStyle.textContent = `
-    .membership-form { max-width: 680px !important; margin: 30px 0 48px !important; padding: 30px 32px 32px; box-sizing: border-box; border: 1px solid #e1e4df; border-radius: 4px; background: #fff; box-shadow: 0 8px 24px rgba(28,48,38,.07); display: grid; gap: 20px !important; }
+    .membership-form { max-width: 680px !important; margin: 30px auto 48px !important; padding: 30px 32px 32px; box-sizing: border-box; border: 1px solid #e1e4df; border-radius: 4px; background: #fff; box-shadow: 0 8px 24px rgba(28,48,38,.07); display: grid; gap: 20px !important; }
     .membership-form .form-field { display: grid; gap: 8px; }
     .membership-form label { color: #30473b; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
     .membership-form input, .membership-form textarea { width: 100%; box-sizing: border-box; padding: 13px 14px; border: 1px solid #d4d9d4; border-radius: 3px; background: #fff; color: #26342d; font: 400 15px/1.5 Inter, sans-serif; outline: none; transition: border-color .2s, box-shadow .2s, background .2s; }
