@@ -1,0 +1,25 @@
+events.html
+  s_f87a458436d814::t_4e3d70dbd4e424 2
+neighborhood-projects.html
+  s_f87a458436d814::t_8baf82a74f35d9 1
+newsletter.html
+  s_f87a458436d814::t_0417fc9b403d44 1
+police-emergencies.html
+  s_f87a458436d814::t_bd502c024a57ba 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.10",
+  "base_commit_sha": "8a2a2ba16d2d2268959c115b9635034777378a5f",
+  "prompts": {},
+  "sessions": {
+    "s_f87a458436d814": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_f7d6a0968ffekT0Vl0cPIR5VEe",
+        "model": "gpt-5.5"
+      },
+      "human_author": "Allan Leinwand <allan@leinwand.org>"
+    }
+  }
+}
