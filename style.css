@@ -1,8 +1,4 @@
-/* ============================================================
-   PHAN SF — Shared design system
-   Playfair Display: editorial headings
-   Inter: UI and body copy
-   ============================================================ */
+/* PHAN shared design system. */
 :root {
   --phan-green: #3f6650;
   --phan-green-dark: #294836;
@@ -16,11 +12,18 @@
   --phan-text: #2c2c2c;
   --phan-muted: #59635e;
   --phan-max: 1200px;
+  --phan-hero-title-size: clamp(48px, 6vw, 78px);
+  --phan-page-title-size: clamp(36px, 4vw, 48px);
+  --phan-home-section-title-size: clamp(40px, 4vw, 58px);
+  --phan-section-title-size: 32px;
+  --phan-card-title-size: clamp(22px, 2vw, 25px);
+  --phan-label-size: 13px;
 }
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif; font-size: 16px; font-weight: 400; line-height: 1.8; color: var(--phan-text); background: #fff; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 :where(h1, h2, h3) { font-family: 'Playfair Display', Georgia, serif; font-weight: 600; color: var(--phan-heading); letter-spacing: -.015em; }
+.phan-eyebrow { display: block; margin-bottom: 12px; color: var(--phan-green); font-size: 11px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; }
 a { color: var(--phan-green); text-decoration: none; }
 a:hover { color: var(--phan-green-dark); text-decoration: underline; }
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid #8fb6a0; outline-offset: 3px; }
@@ -48,8 +51,8 @@ nav a:hover, .nav-dropdown:hover > span { color: var(--phan-green); text-decorat
 .btn:hover { background: var(--phan-green-dark); text-decoration: none; color: #fff; transform: translateY(-1px); }
 .btn-light, .btn-light:hover { background: #fff; color: var(--phan-green-dark); }
 
-/* Shared card treatment used by homepage and inner pages. */
 .site-card,
+.phan-card,
 .about-pillars > div,
 .project-item,
 .membership-note,
@@ -57,20 +60,26 @@ nav a:hover, .nav-dropdown:hover > span { color: var(--phan-green); text-decorat
 .emergency-callout,
 .board-columns > div { position: relative; background: #fff; border: 1px solid var(--phan-green-border); box-shadow: 0 4px 16px rgba(29,43,35,.035); transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease; }
 .site-card:hover,
+.phan-card:hover,
 .about-pillars > div:hover,
 .project-item:hover,
 .membership-note:hover,
 .paypal-section:hover,
 .board-columns > div:hover { border-color: #c5d2c9; box-shadow: 0 14px 34px rgba(29,43,35,.09); transform: translateY(-3px); }
+.phan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.phan-card { display: flex; flex-direction: column; min-height: 230px; padding: 24px 26px 22px; color: inherit; }
+.phan-card:hover { text-decoration: none; }
+.page-content .phan-card :is(h2, h3), .phan-card :is(h2, h3) { margin: 0; padding-bottom: 12px; border-bottom: 1px solid var(--phan-green-rule); color: var(--phan-heading); font-size: var(--phan-card-title-size); line-height: 1.2; overflow-wrap: anywhere; }
+.phan-card :is(h2, h3) a { color: inherit; }
+.phan-card p { margin: 12px 0 0; color: #626b66; font-size: 13px; line-height: 1.6; }
+.phan-card .phan-card-link { display: inline-block; margin-top: auto; padding-top: 16px; color: var(--phan-green); font-size: 10px; font-weight: 600; letter-spacing: .13em; text-transform: uppercase; }
 
-/* Inner pages */
 .page-content { max-width: 880px; margin: 0 auto; padding: 72px 32px 96px; }
-.page-content > h1, .page-content > h2 { font-size: clamp(36px, 4vw, 48px); line-height: 1.15; text-align: center; margin: 0 0 20px; }
-.page-content > h1::after, .page-content > h2::after { content: ''; display: block; width: 48px; height: 1px; background: var(--phan-green); margin: 16px auto 0; }
-.page-content h2:not(:first-child) { text-align: left; font-size: 32px; margin: 56px 0 18px; }
-.page-content h2:not(:first-child)::after { margin: 12px 0 0; }
-.page-content h3 { font-size: 23px; margin: 40px 0 14px; line-height: 1.3; }
-.page-content h4, .story-kicker { font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; margin: 36px 0 14px; color: var(--phan-green); }
+.page-content h2 { margin: 56px 0 18px; font-size: var(--phan-section-title-size); line-height: 1.2; }
+.page-content > h1, .page-content > h2:first-child { margin: 0 0 20px; font-size: var(--phan-page-title-size); line-height: 1.15; text-align: center; }
+.page-content > h1::after, .page-content > h2:first-child::after { content: ''; display: block; width: 48px; height: 1px; background: var(--phan-green); margin: 16px auto 0; }
+.page-content h3 { margin: 40px 0 14px; font-size: 23px; line-height: 1.3; }
+.page-content :is(h4, h5), .story-kicker { margin: 36px 0 14px; color: var(--phan-green); font-size: var(--phan-label-size); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; }
 .page-content p { margin: 0 0 18px; }
 .page-content ul, .page-content ol { margin: 0 0 18px 24px; }
 .page-content li { margin-bottom: 6px; }
@@ -85,9 +94,9 @@ hr { border: 0; border-top: 1px solid var(--phan-green-rule); margin: 48px 0; }
 .project-item { display: grid; grid-template-columns: 340px 1fr; gap: 40px; align-items: stretch; margin-bottom: 48px; padding: 0; overflow: hidden; }
 .project-item img { width: 100%; height: 100%; min-height: 250px; object-fit: cover; border: 0; }
 .project-item > div { padding: 28px 28px 30px 0; }
-.project-item h4 { margin-top: 0; }
+.page-content .project-item h2 { margin: 0 0 12px; font-size: var(--phan-card-title-size); line-height: 1.2; }
 .newsletter-year { margin-top: 34px; }
-.newsletter-year h4 { margin-bottom: 12px; }
+.newsletter-year h3 { margin: 0 0 12px; }
 .newsletter-links { list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-wrap: wrap; gap: 8px; }
 .newsletter-links a { padding: 8px 16px; border: 1px solid var(--phan-green); color: var(--phan-green); font-size: 12px; font-weight: 500; letter-spacing: .07em; }
 .newsletter-links a:hover { background: var(--phan-green); color: #fff; text-decoration: none; }
@@ -96,7 +105,6 @@ hr { border: 0; border-top: 1px solid var(--phan-green-rule); margin: 48px 0; }
 .contact-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; align-items: stretch; }
 .contact-layout .contact-cards { width: 75%; grid-template-columns: 1fr; gap: 12px; justify-self: end; }
 .contact-cards .contact-card { min-height: 0; }
-.contact-cards .contact-card h3 { font-size: clamp(19px, 2vw, 25px); overflow-wrap: anywhere; }
 .contact-cards .phan-eyebrow { margin-bottom: 12px; }
 .contact-cards a { color: inherit; }
 .contact-cards a:hover { color: inherit; }
@@ -142,8 +150,8 @@ hr { border: 0; border-top: 1px solid var(--phan-green-rule); margin: 48px 0; }
   .header-inner { padding: 0 18px; }
   .site-logo img { width: 330px; max-width: 68vw; }
   .page-content { padding: 52px 20px 70px; }
-  .page-content > h1, .page-content > h2 { font-size: 34px; }
-  .page-content h2:not(:first-child) { font-size: 28px; margin-top: 46px; }
+  .page-content > h1, .page-content > h2:first-child { font-size: 34px; }
+  .page-content h2 { font-size: 28px; margin-top: 46px; }
   .board-columns, .project-item, .about-pillars { grid-template-columns: 1fr; gap: 24px; }
   .contact-layout { grid-template-columns: 1fr; }
   .contact-layout .contact-cards { width: 100%; justify-self: stretch; }
@@ -160,7 +168,7 @@ hr { border: 0; border-top: 1px solid var(--phan-green-rule); margin: 48px 0; }
   .site-logo img { width: 280px; max-width: 72vw; }
   .mobile-nav { padding-left: 16px; padding-right: 16px; }
   .page-content { padding: 44px 18px 60px; }
-  .page-content > h1, .page-content > h2 { font-size: 31px; }
+  .page-content > h1, .page-content > h2:first-child { font-size: 31px; }
   .page-content p { font-size: 15px; line-height: 1.75; }
   .btn { padding: 13px 24px; }
 }

@@ -1,7 +1,4 @@
-/* ============================================================
-   PHAN SF — Shared color system
-   One restrained evergreen palette used across every page.
-   ============================================================ */
+/* PHAN shared color system. */
 :root {
   --phan-green: #3f6650;
   --phan-green-dark: #294836;
@@ -17,9 +14,6 @@
 a,
 .phan-card-link,
 .phan-section-link,
-.phan-eyebrow,
-.page-content h4,
-.story-kicker,
 .officer-title { color: var(--phan-green); }
 
 a:hover,
@@ -39,33 +33,14 @@ nav a:hover,
 .dropdown-menu { border-top-color: var(--phan-green); }
 .dropdown-menu a:hover { background: var(--phan-green-soft); }
 
-.phan-section-heading h2,
-.phan-mission h2,
-.phan-neighborhood h2,
-.phan-location h2,
-.phan-guide-heading h2,
-.phan-character-copy h2,
-.phan-history-copy h2,
-.phan-card h3,
-.section-title h2,
-.page-content h2,
-.page-content h3 { color: var(--phan-heading); }
-
-/* The membership banner uses the dark green background, so its heading must stay white. */
-.phan-join h2 { color: #fff; }
-
-.section-title::after,
-.page-content h2::after { background: var(--phan-green); }
 .phan-mission,
 .phan-guide { background: var(--phan-green-soft); }
 .phan-pillars,
-.phan-history-facts,
-.phan-cards { border-color: var(--phan-green-rule); }
+.phan-history-facts { border-color: var(--phan-green-rule); }
 .phan-pillars div,
 .phan-history-facts div { border-color: var(--phan-green-rule); }
 .phan-history-facts strong { color: var(--phan-green); }
 .phan-join { background: var(--phan-green-deep); }
-.phan-join .phan-eyebrow { color: #b7c8bd; }
 
 .membership-note { background: var(--phan-green-soft); border-color: var(--phan-green-border); border-left: 3px solid var(--phan-green); }
 .page-content blockquote { border-left-color: var(--phan-green); background: #f5f8f6; }
@@ -78,10 +53,8 @@ nav a:hover,
 .phan-card:hover,
 .site-card:hover,
 .supervisor-contact-card:hover { border-color: #c5d2c9; }
-.phan-card h3 { border-bottom-color: var(--phan-green-rule); }
 .mobile-nav-toggle { color: var(--phan-green-dark); }
 
-/* Richmond Police Station card */
 .police-station-card {
   max-width: 560px;
   margin: 28px 0;
@@ -96,15 +69,6 @@ nav a:hover,
   box-shadow: 0 14px 34px rgba(29,43,35,.09);
   transform: translateY(-3px);
 }
-.police-station-card h4 {
-  margin: 0;
-  padding-bottom: 12px;
-  border-bottom: 1px solid var(--phan-green-rule);
-  color: var(--phan-heading);
-  font-size: 25px;
-  line-height: 1.2;
-}
-.police-station-card h4 a { color: var(--phan-heading); }
 .police-station-card p {
   margin: 14px 0 0;
   color: #626b66;
